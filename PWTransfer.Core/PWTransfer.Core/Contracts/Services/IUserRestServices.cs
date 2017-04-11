@@ -4,7 +4,7 @@ using PWTransfer.Core.Models;
 
 namespace PWTransfer.Core.Contracts.Services
 {
-	public interface IUserRestServices
+	public interface IUserRestService
 	{
 		Task<User> SearchUser(string userName);
 
@@ -12,6 +12,8 @@ namespace PWTransfer.Core.Contracts.Services
 
 		Task<User> Login(string userName, string password);
 
-		User GetActiveUser();
+        Task<User> Register(string userName, string email, string password);
+
+        User GetActiveUser();
 	}
 }
