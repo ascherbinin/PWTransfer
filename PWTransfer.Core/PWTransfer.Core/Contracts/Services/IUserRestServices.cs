@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using PWTransfer.Core.Models;
 
-namespace PWTransfer.Core
+namespace PWTransfer.Core.Contracts.Services
 {
 	public interface IUserRestServices
 	{
