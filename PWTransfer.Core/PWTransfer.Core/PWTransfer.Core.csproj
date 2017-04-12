@@ -48,11 +48,12 @@
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Services\BaseRestService.cs" />
     <Compile Include="Services\UserRestService.cs" />
+    <Compile Include="Utility\MyDebugTrace.cs" />
     <Compile Include="Utility\Settings.cs" />
     <Compile Include="Utility\UrlConstants.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\BaseModel.cs" />
-    <Compile Include="Contracts\Services\IUserRestServices.cs" />
+    <Compile Include="Contracts\Services\IUserRestService.cs" />
     <Compile Include="Models\Transaction.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />

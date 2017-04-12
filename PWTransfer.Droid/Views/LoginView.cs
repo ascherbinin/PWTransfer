@@ -16,7 +16,7 @@ using MvvmCross.Droid.Views;
 
 namespace PWTransfer.Droid.Views
 {
-    [Activity(Label = "Tip")]
+    [Activity(Label = "Login")]
     public class LoginView : MvxActivity
     {
         public new LoginViewModel ViewModel
