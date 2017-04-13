@@ -111,6 +111,9 @@ namespace PWTransfer.Droid
 			// aapt resource value: 0x7f040002
 			public const int MyButton = 2130968578;
 			
+			// aapt resource value: 0x7f040003
+			public const int twToken = 2130968579;
+			
 			static Id()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();

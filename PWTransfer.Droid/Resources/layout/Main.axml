@@ -10,4 +10,12 @@
         android:layout_height="wrap_content"
         android:text="@string/Hello"
         local:MvxBind="Click RegisterCommand" />
+    <TextView
+        android:text="Medium Text"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/twToken"
+        android:textAlignment="center"
+        local:MvxBind="Text Token, Mode=TwoWay"/>
 </LinearLayout>

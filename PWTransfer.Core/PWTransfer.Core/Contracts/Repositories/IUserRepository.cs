@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace PWTransfer.Core.Contracts.Repositories
 {
-    public interface IUserRepositories
+    public interface IUserRepository
     {
         Task<User> Login(string userName, string password);
+        void ShowMsg(string msg);
     }
 }

@@ -5,21 +5,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PWTransfer.Core.Models;
+using System.Diagnostics;
+using PWTransfer.Core.Helpers;
 
 namespace PWTransfer.Core.Repositories
 {
-    public class UserRepository : BaseRepository//, IUserRepositories
+    public class UserRepository : BaseRepository, IUserRepository
     {
-        //private static readonly List<User> AllKnownUsers = new List<User>
-        //{
-        //    new User { UserName = "gillcleeren", Password="123456", UserId = 1}, //extremely secure, don't try this at home
-        //    new User { UserName = "johnsmith", Password="789456", UserId = 2},
-        //    new User { UserName = "annawhite", Password="100000", UserId = 3}
-        //};
+        private static readonly List<User> AllKnownUsers = new List<User>
+        {
+            new User { UserName = "gillcleeren", Email="123456", UserId = 1}, //extremely secure, don't try this at home
+            new User { UserName = "johnsmith", Email="789456", UserId = 2},
+            new User { UserName = "annawhite", Email="100000", UserId = 3}
+        };
 
-        //public async Task<User> Login(string userName, string password)
-        //{
-        //    return await Task.FromResult(AllKnownUsers.FirstOrDefault(u => u.UserName == userName && u.Password == password));
-        //}
+        public async Task<User> Login(string userName, string email)
+        {
+            return await Task.FromResult(AllKnownUsers.FirstOrDefault(u => u.UserName == userName && u.Email == email));
+        }
+
+
+        public void ShowMsg(string msg)
+        {
+            Debug.WriteLine("Token {0}", Settings.AccessToken);
+        }
     }
 }
