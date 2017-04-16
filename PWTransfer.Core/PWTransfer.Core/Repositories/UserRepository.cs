@@ -25,9 +25,9 @@ namespace PWTransfer.Core.Repositories
         }
 
 
-        public void ShowMsg(string msg)
+        public async Task<User> SearchUser(string userName)
         {
-            Debug.WriteLine("Token {0}", Settings.AccessToken);
+            return await Task.FromResult(AllKnownUsers.FirstOrDefault(u => u.UserName == userName));
         }
     }
 }

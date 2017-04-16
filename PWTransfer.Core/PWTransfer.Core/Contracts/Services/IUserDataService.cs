@@ -1,20 +1,21 @@
 ﻿using PWTransfer.Core.Models;
+using PWTransfer.Core.Models.Rest;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PWTransfer.Core.Contracts.Repositories
+namespace PWTransfer.Core.Contracts.Services
 {
-    public interface IUserRepository
+    public interface IUserDataService
     {
-        Task<User> SearchUsers(string searchString);
+        Task<User> SearchUser(string userName);
+
+        Task<List<User>> GetAllUsers();
 
         Task<string> Login(string userName, string password);
 
         Task<string> Register(string userName, string password, string email);
-
-        Task<User> GetInfo(string userName, string password);
     }
 }

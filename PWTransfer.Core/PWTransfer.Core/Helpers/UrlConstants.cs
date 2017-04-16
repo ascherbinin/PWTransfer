@@ -1,5 +1,5 @@
 ﻿using System;
-namespace PWTransfer.Core.Utility
+namespace PWTransfer.Core.Helpers
 {
 	public static class UrlConstants
 	{
