@@ -17,7 +17,7 @@ namespace PWTransfer.Core.Helpers
 
 		public static string LoginURL()
 		{
-			return _apiUrl + "/sessions/create";
+			return "/sessions/create";
 		}
 
 		public static string TransactionURL()

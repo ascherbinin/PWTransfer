@@ -1,19 +1,19 @@
 ﻿using Newtonsoft.Json;
+using PWTransfer.Core.Exceptions;
 using PWTransfer.Core.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PWTransfer.Core.Repositories
+namespace PWTransfer.Core.Services
 {
-    public class BaseRepository
+    public class BaseDataService
     {
         protected async Task<T> GetAsync<T>(string url)
-            where T : new()
+         where T : new()
         {
             HttpClient httpClient = HttpClientFactory.GetClient();
             T result;
@@ -31,7 +31,7 @@ namespace PWTransfer.Core.Repositories
             return result;
         }
 
-        protected async Task<T> PostAsync<T>(string url, object item )
+        protected async Task<T> PostAsync<T>(string url, object item)
             where T : new()
         {
             T result;
@@ -40,7 +40,7 @@ namespace PWTransfer.Core.Repositories
                 var response = await client.PostAsync(url, JsonContentFactory.CreateJsonContent(item));
                 if (!response.IsSuccessStatusCode)
                 {
-                    throw new Exception((int)response.StatusCode + "-" + response.StatusCode.ToString());
+                    throw new Exception("{(int)response.StatusCode}");
                 }
                 string content = await response.Content.ReadAsStringAsync();
                 result = JsonConvert.DeserializeObject<T>(content);

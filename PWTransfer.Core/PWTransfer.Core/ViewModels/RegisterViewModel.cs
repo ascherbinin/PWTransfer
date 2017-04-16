@@ -3,9 +3,6 @@ using MvvmCross.Plugins.Messenger;
 using PWTransfer.Core.Contracts.Repositories;
 using PWTransfer.Core.Contracts.Services;
 using PWTransfer.Core.Contracts.ViewModels;
-using PWTransfer.Core.Helpers;
-using PWTransfer.Core.Models.Rest;
-using PWTransfer.Core.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,39 +11,31 @@ using System.Threading.Tasks;
 
 namespace PWTransfer.Core.ViewModels
 {
-    public class LoginViewModel : BaseViewModel, ILoginViewModel
+    public class RegisterViewModel : BaseViewModel, IRegisterViewModel
     {
         private readonly IUserRepository _userRepository;
-        private string _token = "OTKEN";
+        private string _token = "TOKEN";
+        private string _username = "";
         private string _email = "";
         private string _password = "";
 
-        public IMvxCommand Register
-        {
-            get
-            {
-               return new MvxCommand(() => ShowViewModel<RegisterViewModel>());
-            }
-        }
-
-        public IMvxCommand Login
-        {
-            get
-            {
-                return new MvxCommand(() =>
-                {
-                    _userRepository.Login("kadabra4@mail.ru", "123456");
-                });
-            }
-        }
-
-        public LoginViewModel(IMvxMessenger messenger,
-            IUserRestService userRestService,
+        public RegisterViewModel(IMvxMessenger messenger,
             IUserRepository userRepository,
             IUserDataService userDataService
             ) : base(messenger)
         {
             _userRepository = userRepository;
+        }
+
+        public IMvxCommand Register
+        {
+            get
+            {
+                return new MvxCommand(() =>
+                {
+                    Token = _userRepository.Register(Username, Password, Email);
+                });
+            }
         }
 
         public override async void Start()
@@ -90,6 +79,16 @@ namespace PWTransfer.Core.ViewModels
             {
                 _password = value;
                 RaisePropertyChanged(() => Password);
+            }
+        }
+
+        public string Username
+        {
+            get { return _username; }
+            set
+            {
+                _username = value;
+                RaisePropertyChanged(() => Username);
             }
         }
     }

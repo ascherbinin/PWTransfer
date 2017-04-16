@@ -4,12 +4,44 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <Button
-        android:id="@+id/MyButton"
+    <EditText
+        android:inputType="textEmailAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/Hello"
-        local:MvxBind="Click RegisterCommand" />
+        android:id="@+id/edEmail"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="150dp"
+        local:MvxBind="Text Email, Mode=TwoWay" />
+    <EditText
+        android:inputType="textPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edPassword"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="20dp"
+        local:MvxBind="Text Password, Mode=TwoWay" />
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Login"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        local:MvxBind="Click Login"
+        android:clickable="true" />
+    <Button
+        android:text="@string/Register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnRegister"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginTop="10dp"
+        local:MvxBind="Click Register"
+        android:textColor="@android:color/holo_blue_light"
+        android:clickable="true" />
     <TextView
         android:text="Medium Text"
         android:textAppearance="?android:attr/textAppearanceMedium"
@@ -17,5 +49,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/twToken"
         android:textAlignment="center"
-        local:MvxBind="Text Token, Mode=TwoWay"/>
+        local:MvxBind="Text Token, Mode=TwoWay"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp" />
 </LinearLayout>

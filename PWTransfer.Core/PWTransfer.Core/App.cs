@@ -27,7 +27,7 @@ namespace PWTransfer.Core
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 
-            var can = Mvx.CanResolve<IUserRestService>();
+            //var can = Mvx.CanResolve<IUserRestService>();
 
             //Mvx.RegisterSingleton<IMvxTextProvider>
             //    (new ResxTextProvider(Strings.ResourceManager));

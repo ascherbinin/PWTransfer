@@ -7,32 +7,42 @@ using System.Threading.Tasks;
 using PWTransfer.Core.Models;
 using PWTransfer.Core.Models.Rest;
 using PWTransfer.Core.Contracts.Repositories;
+using PWTransfer.Core.Helpers;
+using PWTransfer.Core.Exceptions;
 
 namespace PWTransfer.Core.Services
 {
-    public class UserDataService : IUserDataService
+    public class UserDataService : BaseDataService, IUserDataService
     {
-        private readonly IUserRepository _userRepository;
-
-        public UserDataService(IUserRepository userRepository)
-        {
-            _userRepository = userRepository;
-        }
-
         public Task<List<User>> GetAllUsers()
         {
             throw new NotImplementedException();
         }
 
-        public Task<string> Login(string userName, string password)
+        public async Task<string> Login(string pEmail, string pPassword)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var token = await PostAsync<Token>(UrlConstants.RegisterUserURL(), new LoginUser { email = pEmail, password = pPassword });
+                return token.ToString();
+            }
+            catch (Exception e)
+            {
+                return e.Message;
+            }
         }
 
-        public string Register(string userName, string password, string email)
+        public string Register(string pUserame, string pPassword, string pEmail)
         {
-            return _userRepository.Register(userName, password, email);
-        }
+            try
+            {
+                return Task.Run(async () => await PostAsync<Token>(UrlConstants.RegisterUserURL(), new RegUser { username = pUserame, password = pPassword, email = pEmail })).Result.ToString();
+            }
+            catch (Exception e)
+            {
+                return e.Message;
+            }
+         }
 
         public Task<User> SearchUser(string userName)
         {

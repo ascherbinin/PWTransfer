@@ -8,21 +8,19 @@ using PWTransfer.Core.Models;
 using System.Diagnostics;
 using PWTransfer.Core.Helpers;
 using PWTransfer.Core.Models.Rest;
+using PWTransfer.Core.Contracts.Services;
+using PWTransfer.Core.Exceptions;
 
 namespace PWTransfer.Core.Repositories
 {
-    public class UserRepository : BaseRepository, IUserRepository
+    public class UserRepository : IUserRepository
     {
-        //public async Task<User> Login(string userName, string email)
-        //{
-        //    return await Task.FromResult(AllKnownUsers.FirstOrDefault(u => u.UserName == userName && u.Email == email));
-        //}
+        private readonly IUserDataService _userDataService;
 
-
-        //public async Task<User> SearchUser(string userName)
-        //{
-        //    return await Task.FromResult(AllKnownUsers.FirstOrDefault(u => u.UserName == userName));
-        //}
+        public UserRepository(IUserDataService userDataService)
+        {
+            _userDataService = userDataService;
+        }
 
         public Task<User> GetInfo(string userName, string password)
         {
@@ -37,8 +35,8 @@ namespace PWTransfer.Core.Repositories
         public string Register(string pUserame, string pPassword, string pEmail)
         {
             //await Task.Run(() => PrintMessage());
-            string token = Task.Run(async () => await PostAsync<Token>(UrlConstants.RegisterUserURL(), new RegUser { username = pUserame, password = pPassword, email = pEmail })).Result.ToString();
-            return token;
+            return _userDataService.Register(pUserame, pPassword, pEmail);
+
             //return Task.Run(async () => await PostAsync<Token>(UrlConstants.RegisterUserURL(), new RegUser { username = pUserame, password = pPassword, email = pEmail }));
         }
 

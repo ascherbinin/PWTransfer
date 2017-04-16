@@ -108,11 +108,41 @@ namespace PWTransfer.Droid
 			// aapt resource value: 0x7f040001
 			public const int MvxBindingTagUnique = 2130968577;
 			
+			// aapt resource value: 0x7f040004
+			public const int btnLogin = 2130968580;
+			
+			// aapt resource value: 0x7f040005
+			public const int btnRegister = 2130968581;
+			
+			// aapt resource value: 0x7f04000c
+			public const int edConfirmPassword = 2130968588;
+			
 			// aapt resource value: 0x7f040002
-			public const int MyButton = 2130968578;
+			public const int edEmail = 2130968578;
 			
 			// aapt resource value: 0x7f040003
-			public const int twToken = 2130968579;
+			public const int edPassword = 2130968579;
+			
+			// aapt resource value: 0x7f040008
+			public const int edUsername = 2130968584;
+			
+			// aapt resource value: 0x7f04000d
+			public const int tvToken = 2130968589;
+			
+			// aapt resource value: 0x7f040006
+			public const int twToken = 2130968582;
+			
+			// aapt resource value: 0x7f04000b
+			public const int txtConfirmPassword = 2130968587;
+			
+			// aapt resource value: 0x7f040009
+			public const int txtEmail = 2130968585;
+			
+			// aapt resource value: 0x7f04000a
+			public const int txtPassword = 2130968586;
+			
+			// aapt resource value: 0x7f040007
+			public const int txtUserName = 2130968583;
 			
 			static Id()
 			{
@@ -131,7 +161,10 @@ namespace PWTransfer.Droid
 			public const int Main = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int SplashScreen = 2130903041;
+			public const int RegisterView = 2130903041;
+			
+			// aapt resource value: 0x7f030002
+			public const int SplashScreen = 2130903042;
 			
 			static Layout()
 			{
@@ -146,11 +179,14 @@ namespace PWTransfer.Droid
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f050001
-			public const int ApplicationName = 2131034113;
+			// aapt resource value: 0x7f050002
+			public const int ApplicationName = 2131034114;
 			
 			// aapt resource value: 0x7f050000
-			public const int Hello = 2131034112;
+			public const int Login = 2131034112;
+			
+			// aapt resource value: 0x7f050001
+			public const int Register = 2131034113;
 			
 			static String()
 			{

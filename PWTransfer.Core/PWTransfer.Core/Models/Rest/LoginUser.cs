@@ -6,14 +6,9 @@ using System.Threading.Tasks;
 
 namespace PWTransfer.Core.Models.Rest
 {
-    public class Token
+    public class LoginUser
     {
-        public string id_token { get; set; }
-
-        public override string ToString()
-        {
-            return id_token;
-        }
+        public string email { get; set; }
+        public string password { get; set; }
     }
-
 }

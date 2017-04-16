@@ -14,7 +14,7 @@ namespace PWTransfer.Core.Contracts.Services
 
         Task<List<User>> GetAllUsers();
 
-        Task<string> Login(string userName, string password);
+        Task<string> Login(string email, string password);
 
         string Register(string userName, string password, string email);
     }
