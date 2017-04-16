@@ -7,27 +7,44 @@ using System.Threading.Tasks;
 using PWTransfer.Core.Models;
 using System.Diagnostics;
 using PWTransfer.Core.Helpers;
+using PWTransfer.Core.Models.Rest;
 
 namespace PWTransfer.Core.Repositories
 {
     public class UserRepository : BaseRepository, IUserRepository
     {
-        private static readonly List<User> AllKnownUsers = new List<User>
-        {
-            new User { UserName = "gillcleeren", Email="123456", UserId = 1}, //extremely secure, don't try this at home
-            new User { UserName = "johnsmith", Email="789456", UserId = 2},
-            new User { UserName = "annawhite", Email="100000", UserId = 3}
-        };
+        //public async Task<User> Login(string userName, string email)
+        //{
+        //    return await Task.FromResult(AllKnownUsers.FirstOrDefault(u => u.UserName == userName && u.Email == email));
+        //}
 
-        public async Task<User> Login(string userName, string email)
+
+        //public async Task<User> SearchUser(string userName)
+        //{
+        //    return await Task.FromResult(AllKnownUsers.FirstOrDefault(u => u.UserName == userName));
+        //}
+
+        public Task<User> GetInfo(string userName, string password)
         {
-            return await Task.FromResult(AllKnownUsers.FirstOrDefault(u => u.UserName == userName && u.Email == email));
+            throw new NotImplementedException();
         }
 
-
-        public async Task<User> SearchUser(string userName)
+        public Task<string> Login(string userName, string password)
         {
-            return await Task.FromResult(AllKnownUsers.FirstOrDefault(u => u.UserName == userName));
+            throw new NotImplementedException();
+        }
+
+        public string Register(string pUserame, string pPassword, string pEmail)
+        {
+            //await Task.Run(() => PrintMessage());
+            string token = Task.Run(async () => await PostAsync<Token>(UrlConstants.RegisterUserURL(), new RegUser { username = pUserame, password = pPassword, email = pEmail })).Result.ToString();
+            return token;
+            //return Task.Run(async () => await PostAsync<Token>(UrlConstants.RegisterUserURL(), new RegUser { username = pUserame, password = pPassword, email = pEmail }));
+        }
+
+        public Task<User> SearchUsers(string searchString)
+        {
+            throw new NotImplementedException();
         }
     }
 }

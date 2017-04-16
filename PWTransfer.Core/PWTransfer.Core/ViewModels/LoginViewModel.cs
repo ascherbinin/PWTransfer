@@ -17,6 +17,7 @@ namespace PWTransfer.Core.ViewModels
     public class LoginViewModel : BaseViewModel, ILoginViewModel
     {
         private readonly IUserRestService _userRestService;
+        private readonly IUserDataService _userDataService;
         private readonly IUserRepository _userRepository;
         private string _token = "OTKEN";
 
@@ -24,21 +25,21 @@ namespace PWTransfer.Core.ViewModels
         {
             get
             {
-                return new MvxCommand(async () =>
+                return new MvxCommand(() =>
                 {
-                    var token = await _userRestService.Register("abra4", "kadabra4@mail.ru", "123456");
-
-                    Token = token.id_token;
+                    Token = _userDataService.Register("abra4", "kadabra4@mail.ru", "123456");
                 });
             }
         }
 
         public LoginViewModel(IMvxMessenger messenger,
             IUserRestService userRestService,
-            IUserRepository userRepository
+            IUserRepository userRepository,
+            IUserDataService userDataService
             ) : base(messenger)
         {
             _userRestService = userRestService;
+            _userDataService = userDataService;
             _userRepository = userRepository;
         }
 
@@ -50,17 +51,10 @@ namespace PWTransfer.Core.ViewModels
 
         protected override Task InitializeAsync()
         {
-            _userRepository.ShowMsg("msg");
             return Task.Run(() =>
             {
 
             });
-        }
-
-        public async Task<Token> Register()
-        {
-            var content = await _userRestService.Register("abra3", "kadabra3@mail.ru", "123456");
-            return content;
         }
 
         public string Token

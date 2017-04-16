@@ -12,7 +12,7 @@ namespace PWTransfer.Core.Helpers
 
 		public static string RegisterUserURL()
 		{
-			return _apiUrl + "/users";
+			return "/users";
 		}
 
 		public static string LoginURL()

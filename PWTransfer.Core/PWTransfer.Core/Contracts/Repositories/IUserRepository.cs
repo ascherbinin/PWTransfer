@@ -1,4 +1,5 @@
 ﻿using PWTransfer.Core.Models;
+using PWTransfer.Core.Models.Rest;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace PWTransfer.Core.Contracts.Repositories
 
         Task<string> Login(string userName, string password);
 
-        Task<string> Register(string userName, string password, string email);
+        string Register(string pUserame, string pPassword, string pEmail);
 
         Task<User> GetInfo(string userName, string password);
     }

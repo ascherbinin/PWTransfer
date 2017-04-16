@@ -29,9 +29,9 @@ namespace PWTransfer.Core.Services
             throw new NotImplementedException();
         }
 
-        public async Task<string> Register(string userName, string password, string email)
+        public string Register(string userName, string password, string email)
         {
-            return await _userRepository.
+            return _userRepository.Register(userName, password, email);
         }
 
         public Task<User> SearchUser(string userName)
