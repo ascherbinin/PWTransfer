@@ -27,9 +27,9 @@ namespace PWTransfer.Core.Repositories
             throw new NotImplementedException();
         }
 
-        public Task<string> Login(string userName, string password)
+        public async Task<string> Login(string email, string password)
         {
-            throw new NotImplementedException();
+            return await _userDataService.Login(email, password);
         }
 
         public string Register(string pUserame, string pPassword, string pEmail)

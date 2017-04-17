@@ -35,7 +35,7 @@ namespace PWTransfer.Core.ViewModels
             {
                 return new MvxCommand(() =>
                 {
-                    _userRepository.Login("kadabra4@mail.ru", "123456");
+                    Token = _userRepository.Login(Email, Password).Result;
                 });
             }
         }

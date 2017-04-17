@@ -12,7 +12,7 @@ namespace PWTransfer.Core.Contracts.Repositories
     {
         Task<User> SearchUsers(string searchString);
 
-        Task<string> Login(string userName, string password);
+        Task<string> Login(string email, string password);
 
         string Register(string pUserame, string pPassword, string pEmail);
 

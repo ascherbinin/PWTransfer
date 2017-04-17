@@ -23,7 +23,7 @@ namespace PWTransfer.Core.Services
         {
             try
             {
-                var token = await PostAsync<Token>(UrlConstants.RegisterUserURL(), new LoginUser { email = pEmail, password = pPassword });
+                var token = await PostAsync<Token>(UrlConstants.LoginURL(), new LoginUser { email = pEmail, password = pPassword });
                 return token.ToString();
             }
             catch (Exception e)
