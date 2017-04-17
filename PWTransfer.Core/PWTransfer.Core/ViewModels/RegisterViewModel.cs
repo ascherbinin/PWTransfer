@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PWTransfer.Core.Helpers;
 
 namespace PWTransfer.Core.ViewModels
 {
@@ -31,9 +32,12 @@ namespace PWTransfer.Core.ViewModels
         {
             get
             {
-                return new MvxCommand(() =>
+                return new MvxCommand(async () =>
                 {
-                    Token = _userRepository.Register(Username, Password, Email);
+					IsLoading = true;
+                    Token = await _userRepository.Register(Username, Password, Email);
+					IsLoading = false;
+					//Settings.AccessToken = Token;
                 });
             }
         }

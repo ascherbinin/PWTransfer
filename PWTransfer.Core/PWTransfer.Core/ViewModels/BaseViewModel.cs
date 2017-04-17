@@ -9,38 +9,49 @@ using System.Threading.Tasks;
 
 namespace PWTransfer.Core.ViewModels
 {
-   public class BaseViewModel : MvxViewModel, IDisposable
-        {
-            protected IMvxMessenger Messenger;
+	public class BaseViewModel : MvxViewModel, IDisposable
+	{
+		protected IMvxMessenger Messenger;
+		private bool _IsLoading;
 
-            public BaseViewModel(IMvxMessenger messenger)
-            {
-                Messenger = messenger;
-            }
+		public bool IsLoading
+		{
+			get { return _IsLoading; }
+			set
+			{
+				_IsLoading = value;
+				RaisePropertyChanged(() => IsLoading);   
+			}
+		}
 
-            public IMvxLanguageBinder TextSource =>
-                new MvxLanguageBinder("", GetType().Name);
+		public BaseViewModel(IMvxMessenger messenger)
+		{
+			Messenger = messenger;
+		}
 
-            protected async Task ReloadDataAsync()
-            {
-                try
-                {
-                    await InitializeAsync();
-                }
-                catch (Exception ex)
-                {
-                    System.Diagnostics.Debug.WriteLine(ex.ToString());
-                }
-            }
+		public IMvxLanguageBinder TextSource =>
+			new MvxLanguageBinder("", GetType().Name);
 
-            protected virtual Task InitializeAsync()
-            {
-                return Task.FromResult(0);
-            }
+		protected async Task ReloadDataAsync()
+		{
+			try
+			{
+				await InitializeAsync();
+			}
+			catch (Exception ex)
+			{
+				System.Diagnostics.Debug.WriteLine(ex.ToString());
+			}
+		}
 
-            public void Dispose()
-            {
-                Messenger = null;
-            }
-        }
+		protected virtual Task InitializeAsync()
+		{
+			return Task.FromResult(0);
+		}
+
+		public void Dispose()
+		{
+			Messenger = null;
+		}
+	}
 }

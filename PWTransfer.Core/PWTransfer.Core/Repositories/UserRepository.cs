@@ -32,10 +32,10 @@ namespace PWTransfer.Core.Repositories
             return await _userDataService.Login(email, password);
         }
 
-        public string Register(string pUserame, string pPassword, string pEmail)
+        public async Task<string> Register(string pUserame, string pPassword, string pEmail)
         {
             //await Task.Run(() => PrintMessage());
-            return _userDataService.Register(pUserame, pPassword, pEmail);
+            return await _userDataService.Register(pUserame, pPassword, pEmail);
 
             //return Task.Run(async () => await PostAsync<Token>(UrlConstants.RegisterUserURL(), new RegUser { username = pUserame, password = pPassword, email = pEmail }));
         }

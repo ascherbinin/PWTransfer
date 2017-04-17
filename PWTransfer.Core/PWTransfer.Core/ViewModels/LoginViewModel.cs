@@ -36,6 +36,7 @@ namespace PWTransfer.Core.ViewModels
                 return new MvxCommand(() =>
                 {
                     Token = _userRepository.Login(Email, Password).Result;
+					Settings.AccessToken = Token;
                 });
             }
         }
