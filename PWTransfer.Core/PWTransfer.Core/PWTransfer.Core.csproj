@@ -56,10 +56,8 @@
     <Compile Include="Repositories\BaseRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Services\BaseDataService.cs" />
-    <Compile Include="Services\BaseRestService.cs" />
     <Compile Include="Contracts\Services\IUserRestService.cs" />
     <Compile Include="Services\UserDataService.cs" />
-    <Compile Include="Services\UserRestService.cs" />
     <Compile Include="Utility\MyDebugTrace.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\BaseModel.cs" />

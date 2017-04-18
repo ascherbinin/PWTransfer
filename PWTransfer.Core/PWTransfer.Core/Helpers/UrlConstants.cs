@@ -27,7 +27,7 @@ namespace PWTransfer.Core.Helpers
 
 		public static string UserInfoURL()
 		{
-			return _apiUrl + "/api/protected/user-info";
+			return "/api/protected/user-info";
 		}
 
 		public static string UsersURL()

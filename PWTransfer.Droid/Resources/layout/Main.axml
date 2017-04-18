@@ -47,10 +47,23 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/twToken"
+        android:id="@+id/tvToken"
         android:textAlignment="center"
         local:MvxBind="Text Token, Mode=TwoWay"
         android:layout_marginTop="25dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp" />
+    <LinearLayout
+        android:orientation="vertical"
+        local:MvxBind="Visibility Visibility(IsLoading), Mode=TwoWay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical|center_horizontal"
+        android:id="@+id/LinearLayoutLoading">
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:id="@+id/progressBar1" />
+    </LinearLayout>
 </LinearLayout>

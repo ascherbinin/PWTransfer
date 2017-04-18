@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PWTransfer.Core.Models;
 
 namespace PWTransfer.Core.ViewModels
 {
@@ -20,7 +21,7 @@ namespace PWTransfer.Core.ViewModels
         private string _token = "OTKEN";
         private string _email = "";
         private string _password = "";
-
+		private User _user;
         public IMvxCommand Register
         {
             get
@@ -35,24 +36,27 @@ namespace PWTransfer.Core.ViewModels
             {
                 return new MvxCommand(async() =>
                 {
+					IsLoading = true;
                     Token = await _userRepository.Login(Email, Password);
+					_user = await _userRepository.GetSelfInfo();
+					IsLoading = false;
 					//Settings.AccessToken = Token;
                 });
             }
         }
 
         public LoginViewModel(IMvxMessenger messenger,
-            IUserRestService userRestService,
-            IUserRepository userRepository,
-            IUserDataService userDataService
+            IUserRepository userRepository
             ) : base(messenger)
         {
             _userRepository = userRepository;
         }
 
-        public override async void Start()
+
+		public override async void Start()
         {
             base.Start();
+			IsLoading = false;
             await ReloadDataAsync();
         }
 

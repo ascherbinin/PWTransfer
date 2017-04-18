@@ -21,7 +21,7 @@ namespace PWTransfer.Core.Services
             try
             {
                 var response = await httpClient.GetStringAsync(url);
-                result = await Task.Run(() => JsonConvert.DeserializeObject<T>(response));
+                result = JsonConvert.DeserializeObject<T>(response);
             }
             catch
             {

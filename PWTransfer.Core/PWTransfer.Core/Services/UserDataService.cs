@@ -19,11 +19,24 @@ namespace PWTransfer.Core.Services
 			throw new NotImplementedException();
 		}
 
+		public async Task<User> GetSelfInfo()
+		{
+			try
+			{
+				return await GetAsync<User>(UrlConstants.UserInfoURL());
+			}
+			catch (Exception e)
+			{
+				return null;
+			}
+		}
+
 		public async Task<string> Login(string pEmail, string pPassword)
 		{
 			try
 			{
 				var token = await PostAsync<Token>(UrlConstants.LoginURL(), new LoginUser { email = pEmail, password = pPassword });
+				HttpClientFactory.AccessToken = token.ToString();
 				return token.ToString();
 			}
 			catch (Exception e)
@@ -37,6 +50,7 @@ namespace PWTransfer.Core.Services
 			try
 			{
 				var token = await PostAsync<Token>(UrlConstants.RegisterUserURL(), new RegUser { username = pUserame, password = pPassword, email = pEmail });
+				HttpClientFactory.AccessToken = token.ToString();
 				return token.ToString();
 			}
 			catch (Exception e)
