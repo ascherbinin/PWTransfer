@@ -45,6 +45,7 @@ namespace PWTransfer.Core.ViewModels
         public override async void Start()
         {
             base.Start();
+            IsLoading = false;
             await ReloadDataAsync();
         }
 
@@ -95,5 +96,6 @@ namespace PWTransfer.Core.ViewModels
                 RaisePropertyChanged(() => Username);
             }
         }
+
     }
 }

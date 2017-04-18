@@ -38,11 +38,12 @@ namespace PWTransfer.Core.Services
             using (var client = HttpClientFactory.GetClient())
             {
                 var response = await client.PostAsync(url, JsonContentFactory.CreateJsonContent(item));
+                string content = await response.Content.ReadAsStringAsync();
                 if (!response.IsSuccessStatusCode)
                 {
-                    throw new Exception("{(int)response.StatusCode}");
+                    throw new Exception(content);
                 }
-                string content = await response.Content.ReadAsStringAsync();
+
                 result = JsonConvert.DeserializeObject<T>(content);
             }
             return result;

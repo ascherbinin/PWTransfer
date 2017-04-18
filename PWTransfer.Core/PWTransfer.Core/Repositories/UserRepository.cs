@@ -34,10 +34,7 @@ namespace PWTransfer.Core.Repositories
 
         public async Task<string> Register(string pUserame, string pPassword, string pEmail)
         {
-            //await Task.Run(() => PrintMessage());
             return await _userDataService.Register(pUserame, pPassword, pEmail);
-
-            //return Task.Run(async () => await PostAsync<Token>(UrlConstants.RegisterUserURL(), new RegUser { username = pUserame, password = pPassword, email = pEmail }));
         }
 
         public Task<User> SearchUsers(string searchString)

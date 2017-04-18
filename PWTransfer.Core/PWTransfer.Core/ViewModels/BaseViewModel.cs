@@ -12,7 +12,7 @@ namespace PWTransfer.Core.ViewModels
 	public class BaseViewModel : MvxViewModel, IDisposable
 	{
 		protected IMvxMessenger Messenger;
-		private bool _IsLoading;
+		private bool _IsLoading = false;
 
 		public bool IsLoading
 		{

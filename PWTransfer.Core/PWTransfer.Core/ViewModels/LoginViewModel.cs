@@ -33,10 +33,10 @@ namespace PWTransfer.Core.ViewModels
         {
             get
             {
-                return new MvxCommand(() =>
+                return new MvxCommand(async() =>
                 {
-                    Token = _userRepository.Login(Email, Password).Result;
-					Settings.AccessToken = Token;
+                    Token = await _userRepository.Login(Email, Password);
+					//Settings.AccessToken = Token;
                 });
             }
         }
