@@ -12,7 +12,7 @@ namespace PWTransfer.Core.Contracts.Services
     {
         Task<User> SearchUser(string userName);
 
-        Task<List<RemoteUser>> GetAllUsers(string filter);
+		Task<IEnumerable<RemoteUser>> GetAllUsers(string filter);
 
 		Task<User> GetSelfInfo();
 
