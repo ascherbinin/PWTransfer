@@ -32,7 +32,7 @@ namespace PWTransfer.Core.Helpers
 
 		public static string UsersURL()
 		{
-			return _apiUrl + "/api/protected/users/list\n";
+			return "/api/protected/users/list";
 		}
 	}
 }

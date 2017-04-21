@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace PWTransfer.Core.Contracts.Repositories
 {
-    public interface IUserRepository
-    {
-        Task<User> SearchUsers(string searchString);
+	public interface IUserRepository
+	{
+		Task<IEnumerable<RemoteUser>> SearchUsers(string filter);
 
-        Task<string> Login(string email, string password);
+		Task<string> Login(string email, string password);
 
-        Task<string> Register(string pUserame, string pPassword, string pEmail);
+		Task<string> Register(string pUserame, string pPassword, string pEmail);
 
-        Task<User> GetInfo(string userName, string password);
+		Task<User> GetInfo(string userName, string password);
 
 		Task<User> GetSelfInfo();
-    }
+	}
 }

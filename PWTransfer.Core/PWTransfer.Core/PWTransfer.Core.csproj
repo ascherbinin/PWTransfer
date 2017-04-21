@@ -65,6 +65,18 @@
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="Contracts\ViewModels\IMainViewModel.cs" />
+    <Compile Include="ViewModels\SearchUsersViewModel.cs" />
+    <Compile Include="ViewModels\TransactionViewModel.cs" />
+    <Compile Include="ViewModels\SettingsViewModel.cs" />
+    <Compile Include="ViewModels\MenuViewModel.cs" />
+    <Compile Include="Utility\MenuOption.cs" />
+    <Compile Include="Models\App\MenuItem.cs" />
+    <Compile Include="Contracts\ViewModels\ISearchUsersViewModel.cs" />
+    <Compile Include="Models\Rest\RemoteUser.cs" />
+    <Compile Include="Models\Rest\UserFilter.cs" />
+    <Compile Include="Extensions\ListExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="ModernHttpClient, Version=2.4.2.0, Culture=neutral, processorArchitecture=MSIL">
@@ -107,6 +119,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Models\App\" />
+    <Folder Include="Extensions\" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

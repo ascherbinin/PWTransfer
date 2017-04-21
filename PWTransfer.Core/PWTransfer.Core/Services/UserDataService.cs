@@ -14,9 +14,17 @@ namespace PWTransfer.Core.Services
 {
 	public class UserDataService : BaseDataService, IUserDataService
 	{
-		public Task<List<User>> GetAllUsers()
+		public async Task<IEnumerable<RemoteUser>> GetAllUsers(string pFilter)
 		{
-			throw new NotImplementedException();
+			try
+			{
+				var users = await PostAsync<List<RemoteUser>>(UrlConstants.UsersURL(), new UserFilter { filter = pFilter });
+				return users;
+			}
+			catch (Exception e)
+			{
+				return null;
+			}
 		}
 
 		public async Task<User> GetSelfInfo()

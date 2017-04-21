@@ -42,9 +42,9 @@ namespace PWTransfer.Core.Repositories
             return await _userDataService.Register(pUserame, pPassword, pEmail);
         }
 
-        public Task<User> SearchUsers(string searchString)
+		public async Task<IEnumerable<RemoteUser>> SearchUsers(string filter)
         {
-            throw new NotImplementedException();
+			return await _userDataService.GetAllUsers(filter);
         }
     }
 }
