@@ -3,36 +3,44 @@ using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using PWTransfer.Core.Contracts.ViewModels;
 using PWTransfer.Core.ViewModels;
+using System.Collections.Generic;
 
 namespace PWTransfer.Core.ViewModels
 {
-	public class MainViewModel : MvxViewModel, IMainViewModel
-	{
-		private readonly Lazy<SearchUsersViewModel> _searchUsersViewModel;
-		private readonly Lazy<TransactionViewModel> _transactionViewModel;
-		private readonly Lazy<SettingsViewModel> _settingsViewModel;
+    public class MainViewModel : MvxViewModel
+    {
+        readonly Type[] _menuItemTypes = {
+            typeof(MyListViewModel),
+            typeof(UsersViewModel),
+        };
 
-		public SearchUsersViewModel SearchJourneyViewModel => _searchUsersViewModel.Value;
+        public IEnumerable<string> MenuItems { get; private set; } = new[] { "MyList", "Users" };
 
-		public TransactionViewModel SavedJourneysViewModel => _transactionViewModel.Value;
+        public void ShowDefaultMenuItem()
+        {
+            NavigateTo(0);
+        }
 
-		public SettingsViewModel SettingsViewModel => _settingsViewModel.Value;
+        public void NavigateTo(int position)
+        {
+            ShowViewModel(_menuItemTypes[position]);
+        }
+    }
 
-		public MainViewModel()
-		{
-			_searchUsersViewModel = new Lazy<SearchUsersViewModel>(Mvx.IocConstruct<SearchUsersViewModel>);
-			_transactionViewModel = new Lazy<TransactionViewModel>(Mvx.IocConstruct<TransactionViewModel>);
-			_settingsViewModel = new Lazy<SettingsViewModel>(Mvx.IocConstruct<SettingsViewModel>);
-		}
+    public class MenuItem : Tuple<string, Type>
+    {
+        public MenuItem(string displayName, Type viewModelType)
+            : base(displayName, viewModelType)
+        { }
 
-		public void ShowMenu()
-		{
-			ShowViewModel<MenuViewModel>();
-		}
+        public string DisplayName
+        {
+            get { return Item1; }
+        }
 
-		public void ShowSearchJourneys()
-		{
-			ShowViewModel<SearchUsersViewModel>();
-		}
-	}
+        public Type ViewModelType
+        {
+            get { return Item2; }
+        }
+    }
 }

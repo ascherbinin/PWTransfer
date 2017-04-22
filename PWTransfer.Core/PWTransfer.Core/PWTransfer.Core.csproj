@@ -64,13 +64,13 @@
     <Compile Include="Models\Transaction.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\MyListViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Contracts\ViewModels\IMainViewModel.cs" />
-    <Compile Include="ViewModels\SearchUsersViewModel.cs" />
+    <Compile Include="ViewModels\UsersViewModel.cs" />
     <Compile Include="ViewModels\TransactionViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
-    <Compile Include="ViewModels\MenuViewModel.cs" />
     <Compile Include="Utility\MenuOption.cs" />
     <Compile Include="Models\App\MenuItem.cs" />
     <Compile Include="Contracts\ViewModels\ISearchUsersViewModel.cs" />

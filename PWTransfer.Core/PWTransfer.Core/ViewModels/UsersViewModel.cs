@@ -10,7 +10,7 @@ using PWTransfer.Core.Models.Rest;
 
 namespace PWTransfer.Core.ViewModels
 {
-    public class SearchUsersViewModel : BaseViewModel, ISearchUsersViewModel
+    public class UsersViewModel : BaseViewModel, ISearchUsersViewModel
     {
         //private readonly ISavedJourneyDataService _savedJourneyDataService;
         private readonly IUserRepository _userRepository;
@@ -41,7 +41,7 @@ namespace PWTransfer.Core.ViewModels
             }
         }
 
-        public SearchUsersViewModel(IMvxMessenger messenger, IUserRepository userRepository) : base(messenger)
+        public UsersViewModel(IMvxMessenger messenger, IUserRepository userRepository) : base(messenger)
         {
             _userRepository = userRepository;
 

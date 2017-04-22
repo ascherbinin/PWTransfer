@@ -14,6 +14,9 @@ using MvvmCross.Core.ViewModels;
 using PWTransfer.Core;
 using MvvmCross.Platform.Platform;
 using PWTransfer.Core.Utility;
+using MvvmCross.Droid.Views;
+using MvvmCross.Platform;
+using MvvmCross.Droid.Shared.Presenter;
 
 namespace PWTransfer.Droid
 {
@@ -38,6 +41,13 @@ namespace PWTransfer.Droid
         protected override IMvxTrace CreateDebugTrace()
         {
             return new MyDebugTrace();
+        }
+
+        protected override IMvxAndroidViewPresenter CreateViewPresenter()
+        {
+            var mvxFragmentsPresenter = new MvxFragmentsPresenter(AndroidViewAssemblies);
+            Mvx.RegisterSingleton<IMvxAndroidViewPresenter>(mvxFragmentsPresenter);
+            return mvxFragmentsPresenter;
         }
     }
 }
