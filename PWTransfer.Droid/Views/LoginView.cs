@@ -28,7 +28,7 @@ namespace PWTransfer.Droid.Views
         protected override void OnViewModelSet()
         {
             base.OnViewModelSet();
-            SetContentView(Resource.Layout.Main);
+            SetContentView(Resource.Layout.LoginView);
         }
     }
 }
