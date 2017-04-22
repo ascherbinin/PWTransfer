@@ -10,61 +10,62 @@ using PWTransfer.Core.Models.Rest;
 
 namespace PWTransfer.Core.ViewModels
 {
-	public class SearchUsersViewModel : BaseViewModel, ISearchUsersViewModel
-	{
-		//private readonly ISavedJourneyDataService _savedJourneyDataService;
-		private readonly IUserRepository _userRepository;
+    public class SearchUsersViewModel : BaseViewModel, ISearchUsersViewModel
+    {
+        //private readonly ISavedJourneyDataService _savedJourneyDataService;
+        private readonly IUserRepository _userRepository;
 
-		private ObservableCollection<RemoteUser> _users;
+        private ObservableCollection<RemoteUser> _users;
 
-		public MvxCommand ReloadDataCommand
-		{
-			get
-			{
-				return new MvxCommand(async () =>
-				{
-					Users = (await _userRepository.SearchUsers("")).ToObservableCollection();
-				});
-			}
-		}
+        public MvxCommand ReloadDataCommand
+        {
+            get
+            {
+                return new MvxCommand(async () =>
+                {
+                    Users = (await _userRepository.SearchUsers("")).ToObservableCollection();
+                });
+            }
+        }
 
-		public ObservableCollection<RemoteUser> Users
-		{
-			get
-			{
-				return _users;
-			}
-			set
-			{
-				_users = value;
-				RaisePropertyChanged(() => Users);
-			}
-		}
+        public ObservableCollection<RemoteUser> Users
+        {
+            get
+            {
+                return _users;
+            }
+            set
+            {
+                _users = value;
+                RaisePropertyChanged(() => Users);
+            }
+        }
 
-		public SearchUsersViewModel(IMvxMessenger messenger, IUserRepository userRepository) : base(messenger)
-		{
-			_userRepository = userRepository;
+        public SearchUsersViewModel(IMvxMessenger messenger, IUserRepository userRepository) : base(messenger)
+        {
+            _userRepository = userRepository;
 
-			InitializeMessenger();
-		}
+            InitializeMessenger();
+        }
 
-		private void InitializeMessenger()
-		{
-			//Messenger.Subscribe<CurrencyChangedMessage>(async message => await ReloadDataAsync());
-		}
+        private void InitializeMessenger()
+        {
+            //Messenger.Subscribe<CurrencyChangedMessage>(async message => await ReloadDataAsync());
+        }
 
 
-		public override async void Start()
-		{
-			base.Start();
-			await ReloadDataAsync();
-		}
+        public override async void Start()
+        {
+            base.Start();
+            await ReloadDataAsync();
+        }
 
-		protected override async Task InitializeAsync()
-		{
-			//var user = _userDataService.GetActiveUser();
-			//SavedJourneys = (await _savedJourneyDataService.GetSavedJourneyForUser(user.UserId)).ToObservableCollection(   }
-			Users = (await _userRepository.SearchUsers("")).ToObservableCollection();
+        protected override async Task InitializeAsync()
+        {
+            //var user = _userDataService.GetActiveUser();
+            //SavedJourneys = (await _savedJourneyDataService.GetSavedJourneyForUser(user.UserId)).ToObservableCollection(   }
+            Users = (await _userRepository.SearchUsers("")).ToObservableCollection();
 
-	}
+        }
+    }
 }

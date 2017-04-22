@@ -10,9 +10,7 @@ namespace PWTransfer.Core.Contracts.Services
 {
     public interface IUserDataService
     {
-        Task<User> SearchUser(string userName);
-
-		Task<IEnumerable<RemoteUser>> GetAllUsers(string filter);
+		Task<IEnumerable<RemoteUser>> GetUsers(string filter);
 
 		Task<User> GetSelfInfo();
 

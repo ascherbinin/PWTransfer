@@ -14,62 +14,32 @@ namespace PWTransfer.Core.Services
 {
 	public class UserDataService : BaseDataService, IUserDataService
 	{
-		public async Task<IEnumerable<RemoteUser>> GetAllUsers(string pFilter)
-		{
-			try
-			{
-				var users = await PostAsync<List<RemoteUser>>(UrlConstants.UsersURL(), new UserFilter { filter = pFilter });
-				return users;
-			}
-			catch (Exception e)
-			{
-				return null;
-			}
-		}
+        private readonly IUserRepository _userRepository;
 
-		public async Task<User> GetSelfInfo()
-		{
-			try
-			{
-				return await GetAsync<User>(UrlConstants.UserInfoURL());
-			}
-			catch (Exception e)
-			{
-				return null;
-			}
-		}
+        public UserDataService(IUserRepository userRepository)
+        {
+            _userRepository = userRepository;
+        }
 
-		public async Task<string> Login(string pEmail, string pPassword)
-		{
-			try
-			{
-				var token = await PostAsync<Token>(UrlConstants.LoginURL(), new LoginUser { email = pEmail, password = pPassword });
-				HttpClientFactory.AccessToken = token.ToString();
-				return token.ToString();
-			}
-			catch (Exception e)
-			{
-				return e.Message;
-			}
-		}
+        public async Task<IEnumerable<RemoteUser>> GetUsers(string filter)
+        {
+            return await _userRepository.SearchUsers(filter);
+        }
 
-		public async Task<string> Register(string pUserame, string pPassword, string pEmail)
-		{
-			try
-			{
-				var token = await PostAsync<Token>(UrlConstants.RegisterUserURL(), new RegUser { username = pUserame, password = pPassword, email = pEmail });
-				HttpClientFactory.AccessToken = token.ToString();
-				return token.ToString();
-			}
-			catch (Exception e)
-			{
-				return e.Message;
-			}
-		}
+        public async Task<User> GetSelfInfo()
+        {
+            return await _userRepository.GetSelfInfo();
+        }
 
-		public Task<User> SearchUser(string userName)
-		{
-			throw new NotImplementedException();
-		}
+        public async Task<string> Login(string email, string password)
+        {
+            return await _userRepository.Login(email, password);
+        }
+
+        public async Task<string> Register(string pUserame, string pPassword, string pEmail)
+        {
+            return await _userRepository.Register(pUserame, pPassword, pEmail);
+        }
+
 	}
 }

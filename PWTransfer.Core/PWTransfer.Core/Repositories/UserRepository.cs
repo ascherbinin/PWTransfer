@@ -13,38 +13,65 @@ using PWTransfer.Core.Exceptions;
 
 namespace PWTransfer.Core.Repositories
 {
-    public class UserRepository : IUserRepository
+    public class UserRepository : BaseRepository, IUserRepository
     {
-        private readonly IUserDataService _userDataService;
-
-        public UserRepository(IUserDataService userDataService)
-        {
-            _userDataService = userDataService;
-        }
 
         public Task<User> GetInfo(string userName, string password)
         {
             throw new NotImplementedException();
         }
 
-		public async Task<User> GetSelfInfo()
-		{
-			return await _userDataService.GetSelfInfo();
-		}
-
-		public async Task<string> Login(string email, string password)
+        public async Task<User> GetSelfInfo()
         {
-            return await _userDataService.Login(email, password);
+            try
+            {
+                return await GetAsync<User>(UrlConstants.UserInfoURL());
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
+
+        public async Task<string> Login(string pEmail, string pPassword)
+        {
+            try
+            {
+                var token = await PostAsync<Token>(UrlConstants.LoginURL(), new LoginUser { email = pEmail, password = pPassword });
+                HttpClientFactory.AccessToken = token.ToString();
+                return token.ToString();
+            }
+            catch (Exception e)
+            {
+                return e.Message;
+            }
         }
 
         public async Task<string> Register(string pUserame, string pPassword, string pEmail)
         {
-            return await _userDataService.Register(pUserame, pPassword, pEmail);
+            try
+            {
+                var token = await PostAsync<Token>(UrlConstants.RegisterUserURL(), new RegUser { username = pUserame, password = pPassword, email = pEmail });
+                HttpClientFactory.AccessToken = token.ToString();
+                return token.ToString();
+            }
+            catch (Exception e)
+            {
+                return e.Message;
+            }
         }
 
-		public async Task<IEnumerable<RemoteUser>> SearchUsers(string filter)
+        public async Task<IEnumerable<RemoteUser>> SearchUsers(string pFilter)
         {
-			return await _userDataService.GetAllUsers(filter);
+            try
+            {
+                var users = await PostAsync<List<RemoteUser>>(UrlConstants.UsersURL(), new UserFilter { filter = pFilter });
+                return users;
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
         }
     }
 }

@@ -17,7 +17,7 @@ namespace PWTransfer.Core.ViewModels
 {
     public class LoginViewModel : BaseViewModel, ILoginViewModel
     {
-        private readonly IUserRepository _userRepository;
+        private readonly IUserDataService _userDataService;
         private string _token = "OTKEN";
         private string _email = "";
         private string _password = "";
@@ -37,8 +37,8 @@ namespace PWTransfer.Core.ViewModels
                 return new MvxCommand(async() =>
                 {
 					IsLoading = true;
-                    Token = await _userRepository.Login(Email, Password);
-					_user = await _userRepository.GetSelfInfo();
+                    Token = await _userDataService.Login(Email, Password);
+					_user = await _userDataService.GetSelfInfo();
 					IsLoading = false;
 					//Settings.AccessToken = Token;
                 });
@@ -46,10 +46,10 @@ namespace PWTransfer.Core.ViewModels
         }
 
         public LoginViewModel(IMvxMessenger messenger,
-            IUserRepository userRepository
+            IUserDataService userDataService
             ) : base(messenger)
         {
-            _userRepository = userRepository;
+            _userDataService = userDataService;
         }
 
 

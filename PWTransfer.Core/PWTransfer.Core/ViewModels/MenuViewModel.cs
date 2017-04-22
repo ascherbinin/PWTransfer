@@ -60,4 +60,4 @@ namespace PWTransfer.Core.ViewModels
 		}
 	}
 }
-}
+

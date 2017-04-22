@@ -13,7 +13,7 @@ namespace PWTransfer.Core.Repositories
     public class BaseRepository
     {
         protected async Task<T> GetAsync<T>(string url)
-            where T : new()
+        where T : new()
         {
             HttpClient httpClient = HttpClientFactory.GetClient();
             T result;
@@ -21,7 +21,7 @@ namespace PWTransfer.Core.Repositories
             try
             {
                 var response = await httpClient.GetStringAsync(url);
-                result = await Task.Run(() => JsonConvert.DeserializeObject<T>(response));
+                result = JsonConvert.DeserializeObject<T>(response);
             }
             catch
             {
@@ -31,18 +31,19 @@ namespace PWTransfer.Core.Repositories
             return result;
         }
 
-        protected async Task<T> PostAsync<T>(string url, object item )
+        protected async Task<T> PostAsync<T>(string url, object item)
             where T : new()
         {
             T result;
             using (var client = HttpClientFactory.GetClient())
             {
                 var response = await client.PostAsync(url, JsonContentFactory.CreateJsonContent(item));
+                string content = await response.Content.ReadAsStringAsync();
                 if (!response.IsSuccessStatusCode)
                 {
-                    throw new Exception((int)response.StatusCode + "-" + response.StatusCode.ToString());
+                    throw new Exception(content);
                 }
-                string content = await response.Content.ReadAsStringAsync();
+
                 result = JsonConvert.DeserializeObject<T>(content);
             }
             return result;
