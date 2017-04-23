@@ -3,7 +3,10 @@
     xmlns:local="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="105dp"
+    android:background="@drawable/border"
+    android:paddingTop="3dp"
+    android:paddingBottom="3dp">
     <TextView
         android:text="ID:"
         android:textAppearance="?android:attr/textAppearanceSmall"
@@ -18,16 +21,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tvID"
-        android:layout_marginTop="5dp"
         android:layout_marginLeft="15dp"
-        local:MvxBind="Text id"/>
+        local:MvxBind="Text id"
+        android:textStyle="bold" />
     <TextView
         android:text="Name:"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView3"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="3dp"
         android:layout_marginLeft="15dp" />
     <TextView
         android:text="Medium Text"
@@ -35,7 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tvName"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="15dp" 
-        local:MvxBind="Text name"/>
+        android:layout_marginLeft="15dp"
+        local:MvxBind="Text name"
+        android:textStyle="bold" />
 </LinearLayout>

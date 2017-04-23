@@ -27,7 +27,6 @@ namespace PWTransfer.Droid.Views.Fragments
         {
             _alreadyLoaded = true;
             this.EnsureBindingContextIsSet(inflater);
-            //base.OnCreateView(inflater, container, savedInstanceState);
             return this.BindingInflate(Resource.Layout.UsersView, container, false);
         }
 

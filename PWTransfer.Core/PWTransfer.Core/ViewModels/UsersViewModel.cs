@@ -28,6 +28,17 @@ namespace PWTransfer.Core.ViewModels
             }
         }
 
+        public MvxCommand CreateTransactionCommand
+        {
+            get
+            {
+                return new MvxCommand(() =>
+                {
+                    ShowViewModel<MyListViewModel>();
+                });
+            }
+        }
+
         public ObservableCollection<RemoteUser> Users
         {
             get
