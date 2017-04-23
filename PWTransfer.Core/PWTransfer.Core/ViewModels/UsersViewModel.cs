@@ -13,7 +13,7 @@ namespace PWTransfer.Core.ViewModels
     public class UsersViewModel : BaseViewModel, ISearchUsersViewModel
     {
         //private readonly ISavedJourneyDataService _savedJourneyDataService;
-        private readonly IUserRepository _userRepository;
+        private readonly IUserDataService _userDataService;
 
         private ObservableCollection<RemoteUser> _users;
 
@@ -23,7 +23,7 @@ namespace PWTransfer.Core.ViewModels
             {
                 return new MvxCommand(async () =>
                 {
-                    Users = (await _userRepository.SearchUsers(" ")).ToObservableCollection();
+                    Users = (await _userDataService.GetUsers(" ")).ToObservableCollection();
                 });
             }
         }
@@ -41,9 +41,10 @@ namespace PWTransfer.Core.ViewModels
             }
         }
 
-        public UsersViewModel(IMvxMessenger messenger, IUserRepository userRepository) : base(messenger)
+        public UsersViewModel(IMvxMessenger messenger,
+            IUserDataService userDataService) : base(messenger)
         {
-            _userRepository = userRepository;
+            _userDataService = userDataService;
 
             InitializeMessenger();
         }
@@ -63,7 +64,7 @@ namespace PWTransfer.Core.ViewModels
         protected override async Task InitializeAsync()
         {
            
-            Users = (await _userRepository.SearchUsers(" ")).ToObservableCollection();
+            Users = (await _userDataService.GetUsers(" ")).ToObservableCollection();
 
         }
     }
