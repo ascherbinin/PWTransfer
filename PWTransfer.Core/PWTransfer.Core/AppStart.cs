@@ -14,11 +14,7 @@ namespace PWTransfer.Core
     {
         public async void Start(object hint = null)
         {
-            Debug.WriteLine("OPA");
-            ////hardcoded login for this demo
-            //var userService = Mvx.Resolve<IUserDataService>();
-            //await userService.Login("gillcleeren", "123456");
-            ShowViewModel<MainViewModel>();
+            ShowViewModel<LoginViewModel>();
         }
     }
 }

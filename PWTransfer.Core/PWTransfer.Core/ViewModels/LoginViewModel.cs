@@ -40,6 +40,10 @@ namespace PWTransfer.Core.ViewModels
                     Token = await _userDataService.Login(Email, Password);
 					_user = await _userDataService.GetSelfInfo();
 					IsLoading = false;
+                    if (_user != null && Token != null)
+                    {
+                        ShowViewModel<MainViewModel>();
+                    }
 					//Settings.AccessToken = Token;
                 });
             }

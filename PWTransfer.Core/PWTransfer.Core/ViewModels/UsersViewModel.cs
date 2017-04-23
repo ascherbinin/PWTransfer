@@ -23,7 +23,7 @@ namespace PWTransfer.Core.ViewModels
             {
                 return new MvxCommand(async () =>
                 {
-                    Users = (await _userRepository.SearchUsers("")).ToObservableCollection();
+                    Users = (await _userRepository.SearchUsers(" ")).ToObservableCollection();
                 });
             }
         }
@@ -62,9 +62,8 @@ namespace PWTransfer.Core.ViewModels
 
         protected override async Task InitializeAsync()
         {
-            //var user = _userDataService.GetActiveUser();
-            //SavedJourneys = (await _savedJourneyDataService.GetSavedJourneyForUser(user.UserId)).ToObservableCollection(   }
-            Users = (await _userRepository.SearchUsers("")).ToObservableCollection();
+           
+            Users = (await _userRepository.SearchUsers(" ")).ToObservableCollection();
 
         }
     }

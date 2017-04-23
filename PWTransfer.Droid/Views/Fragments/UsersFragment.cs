@@ -12,6 +12,7 @@ using Android.Widget;
 using MvvmCross.Droid.Shared.Attributes;
 using PWTransfer.Core.ViewModels;
 using MvvmCross.Droid.Support.V4;
+using MvvmCross.Binding.Droid.BindingContext;
 
 namespace PWTransfer.Droid.Views.Fragments
 {
@@ -19,9 +20,32 @@ namespace PWTransfer.Droid.Views.Fragments
     [Register("PWTransfer.android.UsersFragment")]
     public class UsersFragment : MvxFragment<UsersViewModel>
     {
+
+        private bool _alreadyLoaded;
+
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            return inflater.Inflate(Resource.Layout.UsersView, container, false);
+            _alreadyLoaded = true;
+            this.EnsureBindingContextIsSet(inflater);
+            //base.OnCreateView(inflater, container, savedInstanceState);
+            return this.BindingInflate(Resource.Layout.UsersView, container, false);
+        }
+
+        public override void OnViewCreated(View view, Bundle savedInstanceState)
+        {
+            base.OnViewCreated(view, savedInstanceState);
+        }
+
+        public override void OnResume()
+        {
+            if (!_alreadyLoaded) ViewModel.Start();
+            base.OnResume();
+        }
+
+        public override void OnStop()
+        {
+            _alreadyLoaded = false;
+            base.OnStop();
         }
     }
 }
