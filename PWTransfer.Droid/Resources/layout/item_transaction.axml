@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/tvID"
             android:layout_marginLeft="7dp"
-            local:MvxBind="Text id"
+            local:MvxBind="Text trans_token.id"
             android:layout_marginTop="2dp"
             android:textStyle="bold" />
     </LinearLayout>
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/tvName"
             android:layout_marginLeft="7dp"
-            local:MvxBind="Text name"
+            local:MvxBind="Text trans_token.username"
             android:textStyle="bold"
             android:layout_marginTop="2dp" />
     </LinearLayout>

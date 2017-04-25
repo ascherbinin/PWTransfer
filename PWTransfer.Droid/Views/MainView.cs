@@ -21,9 +21,7 @@ namespace PWTransfer.Droid.Views
     [Activity]
     public class MainView : MvxCachingFragmentCompatActivity<MainViewModel>
     {
-        Android.Support.V4.App.Fragment[] _fragments = { new MyListFragment(), new UsersFragment() };
-
-        ActionBarDrawerToggle _drawerToggle;
+          ActionBarDrawerToggle _drawerToggle;
 
         ListView _drawerListView;
 
@@ -51,7 +49,7 @@ namespace PWTransfer.Droid.Views
                 Resource.String.OpenDrawerString,
                 Resource.String.CloseDrawerString);
 
-            _drawerLayout.SetDrawerListener(_drawerToggle);
+            _drawerLayout.AddDrawerListener(_drawerToggle);
 
             ShowFragmentAt(0);
         }

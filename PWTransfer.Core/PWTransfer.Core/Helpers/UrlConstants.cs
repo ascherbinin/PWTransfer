@@ -22,7 +22,7 @@ namespace PWTransfer.Core.Helpers
 
 		public static string TransactionURL()
 		{
-			return _apiUrl + "/api/protected/transactions";
+			return "/api/protected/transactions";
 		}
 
 		public static string UserInfoURL()
