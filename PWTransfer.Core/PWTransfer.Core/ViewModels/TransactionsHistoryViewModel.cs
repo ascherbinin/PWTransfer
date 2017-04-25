@@ -17,7 +17,7 @@ namespace PWTransfer.Core.ViewModels
     {
         private readonly ITransactionsDataService _transactionsDataService;
 
-        private ObservableCollection<Transaction> _transactions;
+        private Trans_Token[] _transactions;
 
         public TransactionsHistoryViewModel(IMvxMessenger messenger,
                                             ITransactionsDataService transactionsDataService) : base(messenger)
@@ -27,10 +27,16 @@ namespace PWTransfer.Core.ViewModels
 
         public MvxCommand ReloadDataCommand => new MvxCommand(async () =>
                                                              {
-                                                                 Transactions = (await _transactionsDataService.GetTransactionsHistory()).ToObservableCollection();
+                                                                 Transactions = (await _transactionsDataService.GetTransactionsHistory()).trans_token;
                                                              });
 
-        public ObservableCollection<Transaction> Transactions
+        public MvxCommand CreateTransactionCommand => new MvxCommand(() =>
+                                                            {
+                                                                ShowViewModel<UsersViewModel>();
+                                                            });
+
+        
+        public Trans_Token[] Transactions
         {
             get
             {
@@ -52,7 +58,7 @@ namespace PWTransfer.Core.ViewModels
 
         protected override async Task InitializeAsync()
         {
-           Transactions = (await _transactionsDataService.GetTransactionsHistory()).ToObservableCollection();
+           Transactions = (await _transactionsDataService.GetTransactionsHistory()).trans_token;
         }
     }
 }

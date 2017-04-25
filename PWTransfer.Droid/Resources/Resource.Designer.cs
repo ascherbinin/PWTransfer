@@ -1635,8 +1635,8 @@ namespace PWTransfer.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f0a0061
-			public const int LinearLayoutLoading = 2131361889;
+			// aapt resource value: 0x7f0a006a
+			public const int LinearLayoutLoading = 2131361898;
 			
 			// aapt resource value: 0x7f0a0009
 			public const int MvvmCrossTagId = 2131361801;
@@ -1644,8 +1644,8 @@ namespace PWTransfer.Droid
 			// aapt resource value: 0x7f0a000a
 			public const int MvxBindingTagUnique = 2131361802;
 			
-			// aapt resource value: 0x7f0a0066
-			public const int action0 = 2131361894;
+			// aapt resource value: 0x7f0a006f
+			public const int action0 = 2131361903;
 			
 			// aapt resource value: 0x7f0a0047
 			public const int action_bar = 2131361863;
@@ -1671,8 +1671,8 @@ namespace PWTransfer.Droid
 			// aapt resource value: 0x7f0a0048
 			public const int action_context_bar = 2131361864;
 			
-			// aapt resource value: 0x7f0a006a
-			public const int action_divider = 2131361898;
+			// aapt resource value: 0x7f0a0073
+			public const int action_divider = 2131361907;
 			
 			// aapt resource value: 0x7f0a0002
 			public const int action_menu_divider = 2131361794;
@@ -1707,23 +1707,26 @@ namespace PWTransfer.Droid
 			// aapt resource value: 0x7f0a0024
 			public const int bottom = 2131361828;
 			
-			// aapt resource value: 0x7f0a005e
-			public const int btnLogin = 2131361886;
+			// aapt resource value: 0x7f0a0084
+			public const int btnCreateTransaction = 2131361924;
 			
-			// aapt resource value: 0x7f0a005f
-			public const int btnRegister = 2131361887;
+			// aapt resource value: 0x7f0a0067
+			public const int btnLogin = 2131361895;
+			
+			// aapt resource value: 0x7f0a0068
+			public const int btnRegister = 2131361896;
 			
 			// aapt resource value: 0x7f0a0030
 			public const int buttonPanel = 2131361840;
 			
-			// aapt resource value: 0x7f0a0067
-			public const int cancel_action = 2131361895;
+			// aapt resource value: 0x7f0a0070
+			public const int cancel_action = 2131361904;
 			
 			// aapt resource value: 0x7f0a003e
 			public const int checkbox = 2131361854;
 			
-			// aapt resource value: 0x7f0a006d
-			public const int chronometer = 2131361901;
+			// aapt resource value: 0x7f0a0076
+			public const int chronometer = 2131361910;
 			
 			// aapt resource value: 0x7f0a0020
 			public const int collapseActionView = 2131361824;
@@ -1746,23 +1749,23 @@ namespace PWTransfer.Droid
 			// aapt resource value: 0x7f0a000e
 			public const int disableHome = 2131361806;
 			
-			// aapt resource value: 0x7f0a0063
-			public const int drawerLayout = 2131361891;
+			// aapt resource value: 0x7f0a006c
+			public const int drawerLayout = 2131361900;
+			
+			// aapt resource value: 0x7f0a006e
+			public const int drawerListView = 2131361902;
+			
+			// aapt resource value: 0x7f0a0081
+			public const int edConfirmPassword = 2131361921;
 			
 			// aapt resource value: 0x7f0a0065
-			public const int drawerListView = 2131361893;
+			public const int edEmail = 2131361893;
 			
-			// aapt resource value: 0x7f0a0078
-			public const int edConfirmPassword = 2131361912;
+			// aapt resource value: 0x7f0a0066
+			public const int edPassword = 2131361894;
 			
-			// aapt resource value: 0x7f0a005c
-			public const int edEmail = 2131361884;
-			
-			// aapt resource value: 0x7f0a005d
-			public const int edPassword = 2131361885;
-			
-			// aapt resource value: 0x7f0a0074
-			public const int edUsername = 2131361908;
+			// aapt resource value: 0x7f0a007d
+			public const int edUsername = 2131361917;
 			
 			// aapt resource value: 0x7f0a0049
 			public const int edit_query = 2131361865;
@@ -1770,8 +1773,8 @@ namespace PWTransfer.Droid
 			// aapt resource value: 0x7f0a001d
 			public const int end = 2131361821;
 			
-			// aapt resource value: 0x7f0a0072
-			public const int end_padder = 2131361906;
+			// aapt resource value: 0x7f0a007b
+			public const int end_padder = 2131361915;
 			
 			// aapt resource value: 0x7f0a002a
 			public const int expand_activities_button = 2131361834;
@@ -1779,8 +1782,8 @@ namespace PWTransfer.Droid
 			// aapt resource value: 0x7f0a003d
 			public const int expanded_menu = 2131361853;
 			
-			// aapt resource value: 0x7f0a0064
-			public const int frameLayout = 2131361892;
+			// aapt resource value: 0x7f0a006d
+			public const int frameLayout = 2131361901;
 			
 			// aapt resource value: 0x7f0a0004
 			public const int home = 2131361796;
@@ -1797,14 +1800,14 @@ namespace PWTransfer.Droid
 			// aapt resource value: 0x7f0a002b
 			public const int image = 2131361835;
 			
-			// aapt resource value: 0x7f0a0071
-			public const int info = 2131361905;
+			// aapt resource value: 0x7f0a007a
+			public const int info = 2131361914;
 			
-			// aapt resource value: 0x7f0a006b
-			public const int line1 = 2131361899;
+			// aapt resource value: 0x7f0a0074
+			public const int line1 = 2131361908;
 			
-			// aapt resource value: 0x7f0a006f
-			public const int line3 = 2131361903;
+			// aapt resource value: 0x7f0a0078
+			public const int line3 = 2131361912;
 			
 			// aapt resource value: 0x7f0a0056
 			public const int linearLayout2 = 2131361878;
@@ -1812,14 +1815,23 @@ namespace PWTransfer.Droid
 			// aapt resource value: 0x7f0a0059
 			public const int linearLayout3 = 2131361881;
 			
+			// aapt resource value: 0x7f0a005c
+			public const int linearLayout4 = 2131361884;
+			
+			// aapt resource value: 0x7f0a005f
+			public const int linearLayout5 = 2131361887;
+			
+			// aapt resource value: 0x7f0a0062
+			public const int linearLayout6 = 2131361890;
+			
 			// aapt resource value: 0x7f0a000b
 			public const int listMode = 2131361803;
 			
 			// aapt resource value: 0x7f0a002d
 			public const int list_item = 2131361837;
 			
-			// aapt resource value: 0x7f0a0069
-			public const int media_actions = 2131361897;
+			// aapt resource value: 0x7f0a0072
+			public const int media_actions = 2131361906;
 			
 			// aapt resource value: 0x7f0a001e
 			public const int middle = 2131361822;
@@ -1839,8 +1851,8 @@ namespace PWTransfer.Droid
 			// aapt resource value: 0x7f0a0032
 			public const int parentPanel = 2131361842;
 			
-			// aapt resource value: 0x7f0a0062
-			public const int progressBar1 = 2131361890;
+			// aapt resource value: 0x7f0a006b
+			public const int progressBar1 = 2131361899;
 			
 			// aapt resource value: 0x7f0a0005
 			public const int progress_circular = 2131361797;
@@ -1923,8 +1935,8 @@ namespace PWTransfer.Droid
 			// aapt resource value: 0x7f0a001a
 			public const int src_over = 2131361818;
 			
-			// aapt resource value: 0x7f0a0068
-			public const int status_bar_latest_event_content = 2131361896;
+			// aapt resource value: 0x7f0a0071
+			public const int status_bar_latest_event_content = 2131361905;
 			
 			// aapt resource value: 0x7f0a0041
 			public const int submenuarrow = 2131361857;
@@ -1935,11 +1947,11 @@ namespace PWTransfer.Droid
 			// aapt resource value: 0x7f0a000d
 			public const int tabMode = 2131361805;
 			
-			// aapt resource value: 0x7f0a0070
-			public const int text = 2131361904;
+			// aapt resource value: 0x7f0a0079
+			public const int text = 2131361913;
 			
-			// aapt resource value: 0x7f0a006e
-			public const int text2 = 2131361902;
+			// aapt resource value: 0x7f0a0077
+			public const int text2 = 2131361911;
 			
 			// aapt resource value: 0x7f0a0039
 			public const int textSpacerNoButtons = 2131361849;
@@ -1950,8 +1962,17 @@ namespace PWTransfer.Droid
 			// aapt resource value: 0x7f0a005a
 			public const int textView3 = 2131361882;
 			
-			// aapt resource value: 0x7f0a006c
-			public const int time = 2131361900;
+			// aapt resource value: 0x7f0a005d
+			public const int textView4 = 2131361885;
+			
+			// aapt resource value: 0x7f0a0060
+			public const int textView5 = 2131361888;
+			
+			// aapt resource value: 0x7f0a0063
+			public const int textView6 = 2131361891;
+			
+			// aapt resource value: 0x7f0a0075
+			public const int time = 2131361909;
 			
 			// aapt resource value: 0x7f0a002f
 			public const int title = 2131361839;
@@ -1959,8 +1980,8 @@ namespace PWTransfer.Droid
 			// aapt resource value: 0x7f0a0034
 			public const int title_template = 2131361844;
 			
-			// aapt resource value: 0x7f0a0079
-			public const int toolbar = 2131361913;
+			// aapt resource value: 0x7f0a0082
+			public const int toolbar = 2131361922;
 			
 			// aapt resource value: 0x7f0a0025
 			public const int top = 2131361829;
@@ -1968,8 +1989,17 @@ namespace PWTransfer.Droid
 			// aapt resource value: 0x7f0a0033
 			public const int topPanel = 2131361843;
 			
-			// aapt resource value: 0x7f0a007a
-			public const int transactions_list = 2131361914;
+			// aapt resource value: 0x7f0a0083
+			public const int transactions_list = 2131361923;
+			
+			// aapt resource value: 0x7f0a005e
+			public const int tvAmount = 2131361886;
+			
+			// aapt resource value: 0x7f0a0061
+			public const int tvBalance = 2131361889;
+			
+			// aapt resource value: 0x7f0a0064
+			public const int tvDate = 2131361892;
 			
 			// aapt resource value: 0x7f0a0058
 			public const int tvID = 2131361880;
@@ -1977,20 +2007,20 @@ namespace PWTransfer.Droid
 			// aapt resource value: 0x7f0a005b
 			public const int tvName = 2131361883;
 			
-			// aapt resource value: 0x7f0a0060
-			public const int tvToken = 2131361888;
+			// aapt resource value: 0x7f0a0069
+			public const int tvToken = 2131361897;
 			
-			// aapt resource value: 0x7f0a0077
-			public const int txtConfirmPassword = 2131361911;
+			// aapt resource value: 0x7f0a0080
+			public const int txtConfirmPassword = 2131361920;
 			
-			// aapt resource value: 0x7f0a0075
-			public const int txtEmail = 2131361909;
+			// aapt resource value: 0x7f0a007e
+			public const int txtEmail = 2131361918;
 			
-			// aapt resource value: 0x7f0a0076
-			public const int txtPassword = 2131361910;
+			// aapt resource value: 0x7f0a007f
+			public const int txtPassword = 2131361919;
 			
-			// aapt resource value: 0x7f0a0073
-			public const int txtUserName = 2131361907;
+			// aapt resource value: 0x7f0a007c
+			public const int txtUserName = 2131361916;
 			
 			// aapt resource value: 0x7f0a0008
 			public const int up = 2131361800;
@@ -1998,8 +2028,8 @@ namespace PWTransfer.Droid
 			// aapt resource value: 0x7f0a0014
 			public const int useLogo = 2131361812;
 			
-			// aapt resource value: 0x7f0a007b
-			public const int users_list = 2131361915;
+			// aapt resource value: 0x7f0a0085
+			public const int users_list = 2131361925;
 			
 			// aapt resource value: 0x7f0a0023
 			public const int withText = 2131361827;

@@ -6,17 +6,18 @@ using System.Threading.Tasks;
 
 namespace PWTransfer.Core.Models.Rest
 {
-     public class TransToken
+    public class TransactionsList
+    {
+        public Trans_Token[] trans_token { get; set; }
+    }
+
+    public class Trans_Token
     {
         public int id { get; set; }
-        public string date { get; set; }
+        public DateTime date { get; set; }
         public string username { get; set; }
         public int amount { get; set; }
         public int balance { get; set; }
     }
 
-    public class TransactionsList
-    {
-        public List<TransToken> trans_token { get; set; }
-    }
 }

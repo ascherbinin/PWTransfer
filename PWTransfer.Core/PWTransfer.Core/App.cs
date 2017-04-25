@@ -3,11 +3,12 @@ using MvvmCross.Localization;
 using MvvmCross.Platform;
 using MvvmCross.Platform.IoC;
 using PWTransfer.Core.Contracts.Services;
-using PWTransfer.Core.Services;
+using PWTransfer.Core.Utility;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using PWTransfer.Localization;
 
 namespace PWTransfer.Core
 {
@@ -27,10 +28,8 @@ namespace PWTransfer.Core
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 
-            //var can = Mvx.CanResolve<IUserRestService>();
-
-            //Mvx.RegisterSingleton<IMvxTextProvider>
-            //    (new ResxTextProvider(Strings.ResourceManager));
+            Mvx.RegisterSingleton<IMvxTextProvider>
+                (new ResxTextProvider(Strings.ResourceManager));
 
             RegisterAppStart(new AppStart());
         }

@@ -25,11 +25,11 @@ namespace PWTransfer.Core.Repositories
             }
         }
 
-        public async Task<IEnumerable<TransactionsList>> GetTransactionsHistory()
+        public async Task<TransactionsList> GetTransactionsHistory()
         {
             try
             {
-                return await GetAsync<List<Transaction>>(UrlConstants.TransactionURL());
+                return await GetAsync<TransactionsList>(UrlConstants.TransactionURL());
             }
             catch (Exception e)
             {

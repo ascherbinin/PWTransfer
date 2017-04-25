@@ -35,18 +35,25 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
+    <ProjectReference Include="..\..\PWTransfer.Localization\PWTransfer.Localization\PWTransfer.Localization.csproj">
+      <Project>{8a0c4f9d-9326-4a47-b463-ddaa51178242}</Project>
+      <Name>PWTransfer.Localization</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="AppStart.cs" />
     <Compile Include="Contracts\Repositories\ITransactionsRepository.cs" />
     <Compile Include="Contracts\Repositories\IUserRepository.cs" />
+    <Compile Include="Contracts\Services\IDialogService.cs" />
     <Compile Include="Contracts\Services\IRestService.cs" />
     <Compile Include="Contracts\Services\ITransactionsDataService.cs" />
     <Compile Include="Contracts\Services\IUserDataService.cs" />
     <Compile Include="Contracts\ViewModels\ILoginViewModel.cs" />
     <Compile Include="Contracts\ViewModels\IRegisterViewModel.cs" />
     <Compile Include="Contracts\ViewModels\ITransactionsHistoryViewModel.cs" />
+    <Compile Include="Converters\DateTimeToDayConverter.cs" />
+    <Compile Include="Converters\DateTimeToTimeConverter.cs" />
     <Compile Include="Exceptions\ApiCallException.cs" />
     <Compile Include="Helpers\HttpClientFactory.cs" />
     <Compile Include="Helpers\JsonContentFactory.cs" />
@@ -69,6 +76,7 @@
     <Compile Include="Utility\MyDebugTrace.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Utility\ResxTextProvider.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MyListViewModel.cs" />

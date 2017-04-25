@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="left|start"
-        android:dividerHeight="10.0sp"
+        android:dividerHeight="5.0sp"
         local:MvxItemTemplate="@layout/item_remote_user"
         local:MvxBind="ItemsSource Users; ItemClick CreateTransactionCommand" />
 </LinearLayout>

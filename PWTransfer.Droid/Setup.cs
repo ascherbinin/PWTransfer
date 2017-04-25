@@ -17,6 +17,8 @@ using PWTransfer.Core.Utility;
 using MvvmCross.Droid.Views;
 using MvvmCross.Platform;
 using MvvmCross.Droid.Shared.Presenter;
+using PWTransfer.Core.Contracts.Services;
+using PWTransfer.Droid.Services;
 
 namespace PWTransfer.Droid
 {
@@ -35,7 +37,7 @@ namespace PWTransfer.Droid
         protected override void InitializeIoC()
         {
             base.InitializeIoC();
-            //Mvx.RegisterSingleton<IDialogService>(() => new DialogService());
+            Mvx.RegisterSingleton<IDialogService>(() => new DialogService());
         }
 
         protected override IMvxTrace CreateDebugTrace()

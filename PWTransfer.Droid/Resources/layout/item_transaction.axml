@@ -3,7 +3,7 @@
     xmlns:local="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="75dp"
+    android:layout_height="wrap_content"
     android:background="@drawable/border"
     android:paddingTop="3dp"
     android:paddingBottom="3dp">
@@ -17,7 +17,7 @@
             android:text="ID:"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
+            android:layout_width="55dp"
             android:id="@+id/textView1"
             android:layout_marginLeft="15dp" />
         <TextView
@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/tvID"
             android:layout_marginLeft="7dp"
-            local:MvxBind="Text trans_token.id"
+            local:MvxBind="Text id"
             android:layout_marginTop="2dp"
             android:textStyle="bold" />
     </LinearLayout>
@@ -35,13 +35,13 @@
         android:id="@+id/linearLayout3"
         android:orientation="horizontal"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="3dp"
         android:layout_width="fill_parent">
         <TextView
             android:text="Name:"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
+            android:layout_width="55dp"
             android:id="@+id/textView3"
             android:layout_marginLeft="15dp" />
         <TextView
@@ -51,8 +51,82 @@
             android:layout_height="wrap_content"
             android:id="@+id/tvName"
             android:layout_marginLeft="7dp"
-            local:MvxBind="Text trans_token.username"
+            local:MvxBind="Text username"
             android:textStyle="bold"
             android:layout_marginTop="2dp" />
     </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_width="fill_parent">
+        <TextView
+            android:text="Amount:"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_height="wrap_content"
+            android:layout_width="55dp"
+            android:id="@+id/textView4"
+            android:layout_marginLeft="15dp" />
+        <TextView
+            android:text="Medium Text"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvAmount"
+            android:layout_marginLeft="7dp"
+            local:MvxBind="Text amount"
+            android:textStyle="bold"
+            android:layout_marginTop="2dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
+        android:layout_width="fill_parent">
+        <TextView
+            android:text="Balance:"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_height="wrap_content"
+            android:layout_width="55dp"
+            android:id="@+id/textView5"
+            android:layout_marginLeft="15dp" />
+        <TextView
+            android:text="Medium Text"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvBalance"
+            android:layout_marginLeft="7dp"
+            local:MvxBind="Text balance"
+            android:textStyle="bold" />
+    </LinearLayout>
+  <LinearLayout
+        android:id="@+id/linearLayout6"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
+        android:layout_width="fill_parent">
+    <TextView
+        android:text="Date:"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_height="wrap_content"
+        android:layout_width="55dp"
+        android:id="@+id/textView6"
+        android:layout_marginLeft="15dp" />
+    <TextView
+        android:text="Medium Text"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvDate"
+        android:layout_marginLeft="7dp"
+        local:MvxBind="Text date, Converter=DateTimeToDay"
+        android:textStyle="bold"
+        android:layout_marginTop="2dp" />
+  </LinearLayout>
+  
 </LinearLayout>

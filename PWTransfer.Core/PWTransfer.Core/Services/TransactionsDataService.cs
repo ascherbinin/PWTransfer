@@ -24,7 +24,7 @@ namespace PWTransfer.Core.Services
             return await _transactionsRepository.CreateTransaction(userName, amount);
         }
 
-        public async Task<IEnumerable<Transaction>> GetTransactionsHistory()
+        public async Task<TransactionsList> GetTransactionsHistory()
         {
             return await _transactionsRepository.GetTransactionsHistory();
         }

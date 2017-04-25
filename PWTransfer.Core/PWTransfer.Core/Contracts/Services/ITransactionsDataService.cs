@@ -10,7 +10,7 @@ namespace PWTransfer.Core.Contracts.Services
 {
     public interface ITransactionsDataService
     {
-        Task<IEnumerable<Transaction>> GetTransactionsHistory();
+        Task<TransactionsList> GetTransactionsHistory();
 
         Task<Transaction> CreateTransaction(string userName, double amount);
     }

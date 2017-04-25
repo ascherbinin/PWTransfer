@@ -14,18 +14,20 @@ namespace PWTransfer.Core.ViewModels
 {
     public class RegisterViewModel : BaseViewModel, IRegisterViewModel
     {
-        private readonly IUserRepository _userRepository;
+        private readonly IUserDataService _userDataService;
+        private readonly IDialogService _dialogService;
         private string _token = "TOKEN";
         private string _username = "";
         private string _email = "";
         private string _password = "";
 
         public RegisterViewModel(IMvxMessenger messenger,
-            IUserRepository userRepository,
+            IDialogService dialogService,
             IUserDataService userDataService
             ) : base(messenger)
         {
-            _userRepository = userRepository;
+            _userDataService = userDataService;
+            _dialogService = dialogService;
         }
 
         public IMvxCommand Register
@@ -35,8 +37,17 @@ namespace PWTransfer.Core.ViewModels
                 return new MvxCommand(async () =>
                 {
 					IsLoading = true;
-                    Token = await _userRepository.Register(Username, Password, Email);
+                    Token = await _userDataService.Register(Username, Password, Email);
 					IsLoading = false;
+                    if (Token != null)
+                    {
+                        await
+                        _dialogService.ShowAlertAsync
+                        (TextSource.GetText("CongratulationsMessage"),
+                         TextSource.GetText("CongratulationsTitle"),
+                         TextSource.GetText("CongratulationsOkButton"),
+                         delegate { ShowViewModel<UsersViewModel>(); });
+                    }
 					//Settings.AccessToken = Token;
                 });
             }
