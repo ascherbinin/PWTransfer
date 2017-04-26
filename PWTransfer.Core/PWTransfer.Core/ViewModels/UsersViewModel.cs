@@ -12,9 +12,24 @@ namespace PWTransfer.Core.ViewModels
 {
     public class UsersViewModel : BaseViewModel, ISearchUsersViewModel
     {
-        //private readonly ISavedJourneyDataService _savedJourneyDataService;
         private readonly IUserDataService _userDataService;
+        private string _filter = " ";
 
+        public string Filter
+        {
+            get
+            {
+                return _filter;
+            }
+            set
+            {
+                if (_filter != value)
+                {
+                    _filter = value;
+                    RaisePropertyChanged(() => Filter);
+                }
+            }
+        }
         private ObservableCollection<RemoteUser> _users;
 
         public MvxCommand ReloadDataCommand
@@ -23,7 +38,7 @@ namespace PWTransfer.Core.ViewModels
             {
                 return new MvxCommand(async () =>
                 {
-                    Users = (await _userDataService.GetUsers(" ")).ToObservableCollection();
+                    Users = (await _userDataService.GetUsers(Filter)).ToObservableCollection();
                 });
             }
         }
@@ -75,7 +90,7 @@ namespace PWTransfer.Core.ViewModels
         protected override async Task InitializeAsync()
         {
            
-            Users = (await _userDataService.GetUsers(" ")).ToObservableCollection();
+            Users = (await _userDataService.GetUsers(Filter)).ToObservableCollection();
 
         }
     }

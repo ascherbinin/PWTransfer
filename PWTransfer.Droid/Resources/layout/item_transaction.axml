@@ -103,30 +103,29 @@
             local:MvxBind="Text balance"
             android:textStyle="bold" />
     </LinearLayout>
-  <LinearLayout
+    <LinearLayout
         android:id="@+id/linearLayout6"
         android:orientation="horizontal"
         android:layout_height="wrap_content"
         android:layout_marginTop="3dp"
         android:layout_marginBottom="3dp"
         android:layout_width="fill_parent">
-    <TextView
-        android:text="Date:"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:layout_height="wrap_content"
-        android:layout_width="55dp"
-        android:id="@+id/textView6"
-        android:layout_marginLeft="15dp" />
-    <TextView
-        android:text="Medium Text"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvDate"
-        android:layout_marginLeft="7dp"
-        local:MvxBind="Text date, Converter=DateTimeToDay"
-        android:textStyle="bold"
-        android:layout_marginTop="2dp" />
-  </LinearLayout>
-  
+        <TextView
+            android:text="Date:"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_height="wrap_content"
+            android:layout_width="55dp"
+            android:id="@+id/textView6"
+            android:layout_marginLeft="15dp" />
+        <TextView
+            android:text="Medium Text"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvDate"
+            android:layout_marginLeft="7dp"
+            local:MvxBind="Text date, Converter=DateTimeToDay"
+            android:textStyle="bold"
+            android:layout_marginTop="2dp" />
+    </LinearLayout>
 </LinearLayout>

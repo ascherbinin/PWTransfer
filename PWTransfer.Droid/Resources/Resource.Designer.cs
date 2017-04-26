@@ -1716,6 +1716,9 @@ namespace PWTransfer.Droid
 			// aapt resource value: 0x7f0a0068
 			public const int btnRegister = 2131361896;
 			
+			// aapt resource value: 0x7f0a0085
+			public const int btnSearch = 2131361925;
+			
 			// aapt resource value: 0x7f0a0030
 			public const int buttonPanel = 2131361840;
 			
@@ -2028,8 +2031,8 @@ namespace PWTransfer.Droid
 			// aapt resource value: 0x7f0a0014
 			public const int useLogo = 2131361812;
 			
-			// aapt resource value: 0x7f0a0085
-			public const int users_list = 2131361925;
+			// aapt resource value: 0x7f0a0086
+			public const int users_list = 2131361926;
 			
 			// aapt resource value: 0x7f0a0023
 			public const int withText = 2131361827;
