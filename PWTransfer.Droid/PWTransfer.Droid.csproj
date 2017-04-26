@@ -138,6 +138,7 @@
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Setup.cs" />
+    <Compile Include="Views\Fragments\TransactionFragment.cs" />
     <Compile Include="Views\Fragments\TransactionsHistoryFragment.cs" />
     <Compile Include="Views\Fragments\UsersFragment.cs" />
     <Compile Include="Views\LoginView.cs" />
@@ -174,6 +175,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\item_transaction.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\TransactionView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

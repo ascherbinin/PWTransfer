@@ -13,7 +13,7 @@ using MvvmCross.Core.ViewModels;
 
 namespace PWTransfer.Core.ViewModels
 {
-    public class TransactionsHistoryViewModel : BaseViewModel, ISearchUsersViewModel
+    public class TransactionsHistoryViewModel : BaseViewModel, ITransactionsHistoryViewModel
     {
         private readonly ITransactionsDataService _transactionsDataService;
 

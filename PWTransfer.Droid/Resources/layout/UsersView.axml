@@ -7,6 +7,18 @@
     android:minWidth="25px"
     android:minHeight="25px">
     <LinearLayout
+        android:id="@+id/headerProgress"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        local:MvxBind="Visibility Visibility(IsLoading), Mode=TwoWay">
+        <ProgressBar
+            android:id="@+id/pbHeaderProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="45dip"

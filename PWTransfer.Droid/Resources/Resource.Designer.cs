@@ -1716,8 +1716,11 @@ namespace PWTransfer.Droid
 			// aapt resource value: 0x7f0a0068
 			public const int btnRegister = 2131361896;
 			
+			// aapt resource value: 0x7f0a0088
+			public const int btnSearch = 2131361928;
+			
 			// aapt resource value: 0x7f0a0085
-			public const int btnSearch = 2131361925;
+			public const int button1 = 2131361925;
 			
 			// aapt resource value: 0x7f0a0030
 			public const int buttonPanel = 2131361840;
@@ -1788,6 +1791,9 @@ namespace PWTransfer.Droid
 			// aapt resource value: 0x7f0a006d
 			public const int frameLayout = 2131361901;
 			
+			// aapt resource value: 0x7f0a0086
+			public const int headerProgress = 2131361926;
+			
 			// aapt resource value: 0x7f0a0004
 			public const int home = 2131361796;
 			
@@ -1853,6 +1859,9 @@ namespace PWTransfer.Droid
 			
 			// aapt resource value: 0x7f0a0032
 			public const int parentPanel = 2131361842;
+			
+			// aapt resource value: 0x7f0a0087
+			public const int pbHeaderProgress = 2131361927;
 			
 			// aapt resource value: 0x7f0a006b
 			public const int progressBar1 = 2131361899;
@@ -2031,8 +2040,8 @@ namespace PWTransfer.Droid
 			// aapt resource value: 0x7f0a0014
 			public const int useLogo = 2131361812;
 			
-			// aapt resource value: 0x7f0a0086
-			public const int users_list = 2131361926;
+			// aapt resource value: 0x7f0a0089
+			public const int users_list = 2131361929;
 			
 			// aapt resource value: 0x7f0a0023
 			public const int withText = 2131361827;
@@ -2220,7 +2229,10 @@ namespace PWTransfer.Droid
 			public const int TransactionsHistoryView = 2130903086;
 			
 			// aapt resource value: 0x7f03002f
-			public const int UsersView = 2130903087;
+			public const int TransactionView = 2130903087;
+			
+			// aapt resource value: 0x7f030030
+			public const int UsersView = 2130903088;
 			
 			static Layout()
 			{

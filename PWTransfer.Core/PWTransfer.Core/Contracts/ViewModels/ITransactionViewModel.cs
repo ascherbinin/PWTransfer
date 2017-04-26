@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PWTransfer.Core.Contracts.ViewModels
 {
-    public interface ITransactionsHistoryViewModel
+    public interface ITransactionViewModel
     {
     }
 }

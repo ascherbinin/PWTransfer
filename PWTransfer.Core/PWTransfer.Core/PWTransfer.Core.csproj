@@ -52,6 +52,7 @@
     <Compile Include="Contracts\ViewModels\ILoginViewModel.cs" />
     <Compile Include="Contracts\ViewModels\IRegisterViewModel.cs" />
     <Compile Include="Contracts\ViewModels\ITransactionsHistoryViewModel.cs" />
+    <Compile Include="Contracts\ViewModels\ITransactionViewModel.cs" />
     <Compile Include="Converters\DateTimeToDayConverter.cs" />
     <Compile Include="Converters\DateTimeToTimeConverter.cs" />
     <Compile Include="Exceptions\ApiCallException.cs" />

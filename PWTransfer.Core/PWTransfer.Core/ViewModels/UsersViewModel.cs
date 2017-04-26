@@ -7,6 +7,7 @@ using PWTransfer.Core.Contracts.Repositories;
 using PWTransfer.Core.Contracts.Services;
 using PWTransfer.Core.Contracts.ViewModels;
 using PWTransfer.Core.Models.Rest;
+using System.Windows.Input;
 
 namespace PWTransfer.Core.ViewModels
 {
@@ -14,6 +15,9 @@ namespace PWTransfer.Core.ViewModels
     {
         private readonly IUserDataService _userDataService;
         private string _filter = " ";
+        private string _selectedName;
+
+        private MvxCommand<UsersViewModel> _createTransactionClickedCommand;
 
         public string Filter
         {
@@ -30,6 +34,21 @@ namespace PWTransfer.Core.ViewModels
                 }
             }
         }
+
+        public string SelectedName
+        {
+            get { return _selectedName; }
+            set
+            {
+                if (value != _selectedName)
+                {
+                    _selectedName = value;
+
+                    RaisePropertyChanged(() => SelectedName);
+                }
+            }
+        }
+
         private ObservableCollection<RemoteUser> _users;
 
         public MvxCommand ReloadDataCommand
@@ -38,18 +57,20 @@ namespace PWTransfer.Core.ViewModels
             {
                 return new MvxCommand(async () =>
                 {
+                    IsLoading = true;
                     Users = (await _userDataService.GetUsers(Filter)).ToObservableCollection();
+                    IsLoading = false;
                 });
             }
         }
 
-        public MvxCommand CreateTransactionCommand
+        public IMvxCommand CreateTransactionCommand
         {
             get
             {
-                return new MvxCommand(() =>
+                return _createTransactionClickedCommand = _createTransactionClickedCommand ?? new MvxCommand<UsersViewModel>(SelectedName =>
                 {
-                    ShowViewModel<MyListViewModel>();
+                    ShowViewModel<TransactionViewModel>(new { name = SelectedName });
                 });
             }
         }
@@ -89,9 +110,9 @@ namespace PWTransfer.Core.ViewModels
 
         protected override async Task InitializeAsync()
         {
-           
+            IsLoading = true;
             Users = (await _userDataService.GetUsers(Filter)).ToObservableCollection();
-
+            IsLoading = false;
         }
     }
 }
