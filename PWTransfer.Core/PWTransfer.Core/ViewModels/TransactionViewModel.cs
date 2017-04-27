@@ -52,12 +52,15 @@ namespace PWTransfer.Core.ViewModels
             {
                 return new MvxCommand(async () =>
                 {
+                    
                     await
                       _dialogService.ShowAlertAsync
                       ("TO {Name}",
                        "Confirm transaction",
                        "OK",
                        null);
+
+                    
                 });
             }
         }

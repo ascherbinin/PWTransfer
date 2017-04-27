@@ -17,8 +17,6 @@ namespace PWTransfer.Core.ViewModels
         private string _filter = " ";
         private string _selectedName;
 
-        private MvxCommand<UsersViewModel> _createTransactionClickedCommand;
-
         public string Filter
         {
             get
@@ -51,6 +49,17 @@ namespace PWTransfer.Core.ViewModels
 
         private ObservableCollection<RemoteUser> _users;
 
+        private MvxCommand<RemoteUser> _userSelectedCommand;
+        public IMvxCommand UserSelectedCommand
+        {
+            get { return _userSelectedCommand ?? (_userSelectedCommand = new MvxCommand<RemoteUser>(OnUserSelected)); }
+        }
+
+        void OnUserSelected(RemoteUser selectedUser)
+        {
+            ShowViewModel<TransactionViewModel>(new { name = selectedUser.name });
+        }
+
         public MvxCommand ReloadDataCommand
         {
             get
@@ -64,18 +73,7 @@ namespace PWTransfer.Core.ViewModels
             }
         }
 
-        public IMvxCommand CreateTransactionCommand
-        {
-            get
-            {
-                return _createTransactionClickedCommand = _createTransactionClickedCommand ?? new MvxCommand<UsersViewModel>(SelectedName =>
-                {
-                    ShowViewModel<TransactionViewModel>(new { name = SelectedName });
-                });
-            }
-        }
-
-        public ObservableCollection<RemoteUser> Users
+         public ObservableCollection<RemoteUser> Users
         {
             get
             {

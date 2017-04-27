@@ -54,5 +54,5 @@
         android:layout_weight="1"
         android:dividerHeight="5.0sp"
         local:MvxItemTemplate="@layout/item_remote_user"
-        local:MvxBind="ItemsSource Users; ItemClick CreateTransactionCommand" />
+        local:MvxBind="ItemsSource Users; ItemClick UserSelectedCommand" />
 </LinearLayout>

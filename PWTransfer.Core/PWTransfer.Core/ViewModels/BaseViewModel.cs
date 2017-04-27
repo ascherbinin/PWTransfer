@@ -53,5 +53,6 @@ namespace PWTransfer.Core.ViewModels
 		{
 			Messenger = null;
 		}
+
 	}
 }
