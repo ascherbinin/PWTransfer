@@ -19,9 +19,9 @@ namespace PWTransfer.Core.ViewModels
     {
         private readonly IUserDataService _userDataService;
 		private readonly IDialogService _dialogService;
-        private string _token = "OTKEN";
-        private string _email = "mutant-@live.ru";
-        private string _password = "5757";
+        private string _token;
+        private string _email = "";
+        private string _password = "";
 		private User _user;
         public IMvxCommand Register
         {
