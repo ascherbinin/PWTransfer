@@ -50,9 +50,14 @@ namespace PWTransfer.Droid.Services
 				builder.SetTitle(title);
 				builder.SetMessage(message);
 				if (!Equals(callback, null))
-					builder.SetNegativeButton(okButton, (sender, e) => { callback(); });
+				{
+					builder.SetPositiveButton(okButton, (sender, e) => { callback(); });
+					builder.SetNegativeButton("Cancel", (sender, e) => { });
+				}
 				else
+				{
 					builder.SetNegativeButton(okButton, (sender, e) => { });
+				}
 				builder.Show();
 			}, null);
 		}

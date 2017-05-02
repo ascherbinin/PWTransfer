@@ -1710,17 +1710,17 @@ namespace PWTransfer.Droid
 			// aapt resource value: 0x7f0a0084
 			public const int btnCreateTransaction = 2131361924;
 			
-			// aapt resource value: 0x7f0a0067
-			public const int btnLogin = 2131361895;
-			
 			// aapt resource value: 0x7f0a0068
-			public const int btnRegister = 2131361896;
+			public const int btnLogin = 2131361896;
 			
-			// aapt resource value: 0x7f0a008a
-			public const int btnSearch = 2131361930;
+			// aapt resource value: 0x7f0a0069
+			public const int btnRegister = 2131361897;
 			
-			// aapt resource value: 0x7f0a0087
-			public const int button1 = 2131361927;
+			// aapt resource value: 0x7f0a0089
+			public const int btnSearch = 2131361929;
+			
+			// aapt resource value: 0x7f0a0086
+			public const int button1 = 2131361926;
 			
 			// aapt resource value: 0x7f0a0030
 			public const int buttonPanel = 2131361840;
@@ -1764,17 +1764,17 @@ namespace PWTransfer.Droid
 			// aapt resource value: 0x7f0a0081
 			public const int edConfirmPassword = 2131361921;
 			
-			// aapt resource value: 0x7f0a0065
-			public const int edEmail = 2131361893;
-			
 			// aapt resource value: 0x7f0a0066
-			public const int edPassword = 2131361894;
+			public const int edEmail = 2131361894;
+			
+			// aapt resource value: 0x7f0a0067
+			public const int edPassword = 2131361895;
 			
 			// aapt resource value: 0x7f0a007d
 			public const int edUsername = 2131361917;
 			
-			// aapt resource value: 0x7f0a0086
-			public const int editText1 = 2131361926;
+			// aapt resource value: 0x7f0a0085
+			public const int editText1 = 2131361925;
 			
 			// aapt resource value: 0x7f0a0049
 			public const int edit_query = 2131361865;
@@ -1794,8 +1794,8 @@ namespace PWTransfer.Droid
 			// aapt resource value: 0x7f0a006d
 			public const int frameLayout = 2131361901;
 			
-			// aapt resource value: 0x7f0a0088
-			public const int headerProgress = 2131361928;
+			// aapt resource value: 0x7f0a0087
+			public const int headerProgress = 2131361927;
 			
 			// aapt resource value: 0x7f0a0004
 			public const int home = 2131361796;
@@ -1863,8 +1863,8 @@ namespace PWTransfer.Droid
 			// aapt resource value: 0x7f0a0032
 			public const int parentPanel = 2131361842;
 			
-			// aapt resource value: 0x7f0a0089
-			public const int pbHeaderProgress = 2131361929;
+			// aapt resource value: 0x7f0a0088
+			public const int pbHeaderProgress = 2131361928;
 			
 			// aapt resource value: 0x7f0a006b
 			public const int progressBar1 = 2131361899;
@@ -1974,8 +1974,8 @@ namespace PWTransfer.Droid
 			// aapt resource value: 0x7f0a0057
 			public const int textView1 = 2131361879;
 			
-			// aapt resource value: 0x7f0a0085
-			public const int textView2 = 2131361925;
+			// aapt resource value: 0x7f0a0065
+			public const int textView2 = 2131361893;
 			
 			// aapt resource value: 0x7f0a005a
 			public const int textView3 = 2131361882;
@@ -2025,9 +2025,6 @@ namespace PWTransfer.Droid
 			// aapt resource value: 0x7f0a005b
 			public const int tvName = 2131361883;
 			
-			// aapt resource value: 0x7f0a0069
-			public const int tvToken = 2131361897;
-			
 			// aapt resource value: 0x7f0a0080
 			public const int txtConfirmPassword = 2131361920;
 			
@@ -2046,8 +2043,8 @@ namespace PWTransfer.Droid
 			// aapt resource value: 0x7f0a0014
 			public const int useLogo = 2131361812;
 			
-			// aapt resource value: 0x7f0a008b
-			public const int users_list = 2131361931;
+			// aapt resource value: 0x7f0a008a
+			public const int users_list = 2131361930;
 			
 			// aapt resource value: 0x7f0a0023
 			public const int withText = 2131361827;

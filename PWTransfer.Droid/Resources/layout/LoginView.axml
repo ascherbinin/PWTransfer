@@ -4,6 +4,26 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <TextView
+        android:text="ParroT WingS"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1"
+        android:gravity="center"
+        android:typeface="serif"
+        android:textStyle="bold"
+        android:layout_marginTop="100dp"
+        android:textSize="@dimen/abc_action_bar_stacked_max_height" />
+    <TextView
+        android:text="TRANSFER"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:typeface="serif" />
     <EditText
         android:inputType="textEmailAddress"
         android:layout_width="match_parent"
@@ -11,7 +31,7 @@
         android:id="@+id/edEmail"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="50dp"
         local:MvxBind="Text Email, Mode=TwoWay" />
     <EditText
         android:inputType="textPassword"
@@ -42,17 +62,6 @@
         local:MvxBind="Click Register"
         android:textColor="@android:color/holo_blue_light"
         android:clickable="true" />
-    <TextView
-        android:text="Medium Text"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvToken"
-        android:textAlignment="center"
-        local:MvxBind="Text Token, Mode=TwoWay"
-        android:layout_marginTop="25dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp" />
     <LinearLayout
         android:orientation="vertical"
         local:MvxBind="Visibility Visibility(IsLoading), Mode=TwoWay"

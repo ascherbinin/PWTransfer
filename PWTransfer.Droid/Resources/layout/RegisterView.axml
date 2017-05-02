@@ -73,15 +73,6 @@
         android:layout_marginRight="30dp"
         android:id="@+id/btnRegister"
         local:MvxBind="Click Register" />
-    <TextView
-        android:text="TOKEN"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvToken"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        local:MvxBind="Text Token, Mode=TwoWay" />
     <LinearLayout
         android:orientation="vertical"
         local:MvxBind="Visibility Visibility(IsLoading), Mode=TwoWay"
