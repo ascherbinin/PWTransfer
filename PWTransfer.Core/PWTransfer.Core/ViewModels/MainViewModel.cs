@@ -10,12 +10,11 @@ namespace PWTransfer.Core.ViewModels
     public class MainViewModel : MvxViewModel
     {
         readonly Type[] _menuItemTypes = {
-            typeof(MyListViewModel),
             typeof(UsersViewModel),
             typeof(TransactionsHistoryViewModel),
         };
 
-        public IEnumerable<string> MenuItems { get; private set; } = new[] { "MyList", "Users", "Transactions" };
+        public IEnumerable<string> MenuItems { get; private set; } = new[] { "Users", "Transactions" };
 
         public void ShowDefaultMenuItem()
         {

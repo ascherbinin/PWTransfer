@@ -4,6 +4,7 @@ using PWTransfer.Core.Contracts.Services;
 using PWTransfer.Core.Contracts.ViewModels;
 using System;
 using System.Threading.Tasks;
+using PWTransfer.Core.Models.Rest;
 
 namespace PWTransfer.Core.ViewModels
 {
@@ -46,21 +47,31 @@ namespace PWTransfer.Core.ViewModels
             }
         }
 
-        public MvxCommand ConfirmTransactionComment
+        public MvxCommand ConfirmTransactionCommand
         {
             get
             {
                 return new MvxCommand(async () =>
                 {
-                    
-                    await
-                      _dialogService.ShowAlertAsync
-                      ("TO {Name}",
-                       "Confirm transaction",
-                       "OK",
-                       null);
 
-                    
+					await
+					_dialogService.ShowAlertAsync(
+						(String.Format("Want to transfer money to {0}", Name)),
+						 "Confirm transaction",
+						 "OK",
+						 async() => { 
+							Transaction trans = await _transactionsDataService.CreateTransaction(Name, Amount);
+							 if (trans != null)
+							 {
+								 await _dialogService.ShowToastAsync(String.Format("Transaction complete! Balance: {0}", trans.trans_token.balance));
+								 var message = new ReceiveNewTransactionMessage(this);
+							 	 Messenger.Publish(message);
+							 }
+							 else
+							 {
+								 await _dialogService.ShowToastAsync("Transaction ERROR!");
+							 }
+					     });
                 });
             }
         }
@@ -83,5 +94,7 @@ namespace PWTransfer.Core.ViewModels
         {
             _name = name;
         }
+
+
     }
 }

@@ -17,15 +17,14 @@ namespace PWTransfer.Core.Repositories
         {
             HttpClient httpClient = HttpClientFactory.GetClient();
             T result;
-
+			var response = await httpClient.GetStringAsync(url);
             try
-            {
-                var response = await httpClient.GetStringAsync(url);
+			{
                 result = JsonConvert.DeserializeObject<T>(response);
             }
             catch
             {
-                result = new T();
+                throw new Exception(response);
             }
 
             return result;

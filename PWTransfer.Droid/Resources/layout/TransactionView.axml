@@ -5,18 +5,54 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
-        android:text="Medium Text"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Transfer"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView1"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        local:MvxBind="Text Name"/>
+        android:gravity="center"
+        android:layout_marginTop="75dp"
+        android:textAllCaps="true"
+        android:textColor="#ffc7c7c7" />
+    <TextView
+        android:text="TO"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:gravity="center"
+        android:textAllCaps="true"
+        android:textColor="#ffc7c7c7" />
+    <TextView
+        android:text="NAME"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:gravity="center"
+        android:textSize="@dimen/abc_action_bar_progress_bar_size"
+        local:MvxBind="Text Name" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText1"
+        android:numeric="integer"
+        android:inputType="number"
+        local:MvxBind="Text Amount"
+        android:gravity="center"
+        android:textSize="@dimen/abc_action_bar_stacked_max_height" />
+    <TextView
+        android:text="please insert amout"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView4"
+        android:gravity="center"
+        android:textColor="#ffd5d5d5" />
     <Button
         android:text="Send"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/button1"
-        local:MvxBind="Click ConfirmTransactionCommand"/>
+        local:MvxBind="Click ConfirmTransactionCommand" />
 </LinearLayout>

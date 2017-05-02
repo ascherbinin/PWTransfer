@@ -132,7 +132,6 @@
   <ItemGroup>
     <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
     <Compile Include="Bootstrap\VisibilityPluginBootstrap.cs" />
-    <Compile Include="MyListFragment.cs" />
     <Compile Include="Services\DialogService.cs" />
     <Compile Include="SplashScreen.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />

@@ -13,52 +13,60 @@ using MvvmCross.Core.ViewModels;
 
 namespace PWTransfer.Core.ViewModels
 {
-    public class TransactionsHistoryViewModel : BaseViewModel, ITransactionsHistoryViewModel
-    {
-        private readonly ITransactionsDataService _transactionsDataService;
+	public class TransactionsHistoryViewModel : BaseViewModel, ITransactionsHistoryViewModel
+	{
+		private readonly ITransactionsDataService _transactionsDataService;
+		private readonly MvxSubscriptionToken _token;
 
-        private Trans_Token[] _transactions;
+		private Trans_Token[] _transactions;
 
-        public TransactionsHistoryViewModel(IMvxMessenger messenger,
-                                            ITransactionsDataService transactionsDataService) : base(messenger)
-        {
-            _transactionsDataService = transactionsDataService;
-        }
+		public TransactionsHistoryViewModel(IMvxMessenger messenger,
+											ITransactionsDataService transactionsDataService) : base(messenger)
+		{
+			_transactionsDataService = transactionsDataService;
+			_token = messenger.Subscribe<ReceiveNewTransactionMessage>(OnReloadData);
+		}
 
-        public MvxCommand ReloadDataCommand => new MvxCommand(async () =>
-                                                             {
-                                                                 Transactions = (await _transactionsDataService.GetTransactionsHistory()).trans_token;
-                                                             });
+		public MvxCommand ReloadDataCommand => new MvxCommand(async () =>
+															 {
+																 Transactions = (await _transactionsDataService.GetTransactionsHistory()).trans_token;
+															 });
 
-        public MvxCommand CreateTransactionCommand => new MvxCommand(() =>
-                                                            {
-                                                                ShowViewModel<UsersViewModel>();
-                                                            });
-
-        
-        public Trans_Token[] Transactions
-        {
-            get
-            {
-                return _transactions;
-            }
-            set
-            {
-                _transactions = value;
-                RaisePropertyChanged(() => Transactions);
-            }
-        }
+		public MvxCommand CreateTransactionCommand => new MvxCommand(() =>
+															{
+																ShowViewModel<UsersViewModel>();
+															});
 
 
-        public override async void Start()
-        {
-            base.Start();
-            await ReloadDataAsync();
-        }
+		public Trans_Token[] Transactions
+		{
+			get
+			{
+				return _transactions;
+			}
+			set
+			{
+				_transactions = value;
+				RaisePropertyChanged(() => Transactions);
+			}
+		}
 
-        protected override async Task InitializeAsync()
-        {
-           Transactions = (await _transactionsDataService.GetTransactionsHistory()).trans_token;
-        }
-    }
+
+		public override async void Start()
+		{
+			base.Start();
+			await ReloadDataAsync();
+		}
+
+		protected override async Task InitializeAsync()
+		{
+			Transactions = (await _transactionsDataService.GetTransactionsHistory()).trans_token;
+		}
+
+		private async void OnReloadData(ReceiveNewTransactionMessage message)
+		{
+			await ReloadDataAsync();
+		}
+
+	}
 }

@@ -18,6 +18,7 @@ namespace PWTransfer.Core.ViewModels
     public class LoginViewModel : BaseViewModel, ILoginViewModel
     {
         private readonly IUserDataService _userDataService;
+		private readonly IDialogService _dialogService;
         private string _token = "OTKEN";
         private string _email = "mutant-@live.ru";
         private string _password = "5757";
@@ -44,15 +45,16 @@ namespace PWTransfer.Core.ViewModels
                     {
                         ShowViewModel<MainViewModel>();
                     }
-					//Settings.AccessToken = Token;
                 });
             }
         }
 
         public LoginViewModel(IMvxMessenger messenger,
-            IUserDataService userDataService
-            ) : base(messenger)
+		                      IDialogService dialogService,
+            				  IUserDataService userDataService
+            				 ) : base(messenger)
         {
+			_dialogService = dialogService;
             _userDataService = userDataService;
         }
 

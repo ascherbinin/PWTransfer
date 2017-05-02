@@ -18,64 +18,69 @@ using PWTransfer.Core.ViewModels;
 
 namespace PWTransfer.Droid.Views
 {
-    [Activity]
-    public class MainView : MvxCachingFragmentCompatActivity<MainViewModel>
-    {
-          ActionBarDrawerToggle _drawerToggle;
+	[Activity(
+		NoHistory = true
+	)]
+	public class MainView : MvxCachingFragmentCompatActivity<MainViewModel>
+	{
+		ActionBarDrawerToggle _drawerToggle;
 
-        ListView _drawerListView;
+		ListView _drawerListView;
 
-        DrawerLayout _drawerLayout;
+		DrawerLayout _drawerLayout;
 
-        protected override void OnCreate(Bundle savedInstanceState)
-        {
-            base.OnCreate(savedInstanceState);
+		protected override void OnCreate(Bundle savedInstanceState)
+		{
+			base.OnCreate(savedInstanceState);
 
-            SetContentView(Resource.Layout.MainView);
+			SetContentView(Resource.Layout.MainView);
 
-            //var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
-            //SetSupportActionBar(toolbar);
-            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+			//var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+			//SetSupportActionBar(toolbar);
+			SupportActionBar.SetDisplayHomeAsUpEnabled(true);
 
-            _drawerListView = FindViewById<ListView>(Resource.Id.drawerListView);
-            _drawerListView.ItemClick += (s, e) => ShowFragmentAt(e.Position);
-            _drawerListView.Adapter = new ArrayAdapter<string>(this, global::Android.Resource.Layout.SimpleListItem1, ViewModel.MenuItems.ToArray());
+			_drawerListView = FindViewById<ListView>(Resource.Id.drawerListView);
+			_drawerListView.ItemClick += (s, e) => ShowFragmentAt(e.Position);
+			_drawerListView.Adapter = new ArrayAdapter<string>(this, global::Android.Resource.Layout.SimpleListItem1, ViewModel.MenuItems.ToArray());
 
-            _drawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawerLayout);
+			_drawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawerLayout);
 
-            _drawerToggle = new ActionBarDrawerToggle(
-                this,
-                _drawerLayout,
-                Resource.String.OpenDrawerString,
-                Resource.String.CloseDrawerString);
+			_drawerToggle = new ActionBarDrawerToggle(
+				this,
+				_drawerLayout,
+				Resource.String.OpenDrawerString,
+				Resource.String.CloseDrawerString);
 
-            _drawerLayout.AddDrawerListener(_drawerToggle);
+			_drawerLayout.AddDrawerListener(_drawerToggle);
 
-            ShowFragmentAt(0);
-        }
 
-        void ShowFragmentAt(int position)
-        {
-            ViewModel.NavigateTo(position);
 
-            Title = ViewModel.MenuItems.ElementAt(position);
+			ShowFragmentAt(0);
+		}
 
-            _drawerLayout.CloseDrawer(_drawerListView);
-        }
+		void ShowFragmentAt(int position)
+		{
+			ViewModel.NavigateTo(position);
 
-        protected override void OnPostCreate(Bundle savedInstanceState)
-        {
-            _drawerToggle.SyncState();
+			Title = ViewModel.MenuItems.ElementAt(position);
 
-            base.OnPostCreate(savedInstanceState);
-        }
+			_drawerLayout.CloseDrawer(_drawerListView);
+		}
 
-        public override bool OnOptionsItemSelected(IMenuItem item)
-        {
-            if (_drawerToggle.OnOptionsItemSelected(item))
-                return true;
+		protected override void OnPostCreate(Bundle savedInstanceState)
+		{
+			_drawerToggle.SyncState();
 
-            return base.OnOptionsItemSelected(item);
-        }
-    }
+			base.OnPostCreate(savedInstanceState);
+		}
+
+		public override bool OnOptionsItemSelected(IMenuItem item)
+		{
+			if (_drawerToggle.OnOptionsItemSelected(item))
+				return true;
+
+			return base.OnOptionsItemSelected(item);
+		}
+	}
+
 }

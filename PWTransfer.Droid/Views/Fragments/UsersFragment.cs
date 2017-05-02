@@ -16,7 +16,7 @@ using MvvmCross.Binding.Droid.BindingContext;
 
 namespace PWTransfer.Droid.Views.Fragments
 {
-    [MvxFragmentAttribute(typeof(MainViewModel), Resource.Id.frameLayout)]
+    [MvxFragmentAttribute(typeof(MainViewModel), Resource.Id.frameLayout, AddToBackStack = true)]
     [Register("PWTransfer.android.UsersFragment")]
     public class UsersFragment : MvxFragment<UsersViewModel>
     {

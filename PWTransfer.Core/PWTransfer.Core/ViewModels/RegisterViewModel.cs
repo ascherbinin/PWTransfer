@@ -48,7 +48,6 @@ namespace PWTransfer.Core.ViewModels
                          TextSource.GetText("CongratulationsOkButton"),
                          delegate { ShowViewModel<UsersViewModel>(); });
                     }
-					//Settings.AccessToken = Token;
                 });
             }
         }
